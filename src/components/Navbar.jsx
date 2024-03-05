@@ -40,7 +40,7 @@ const Navbar = () => {
    ]
 
    return (
-      <nav className="w-full">
+      <nav className="w-full shadow-md">
          <div className="flex justify-between items-center mx-4 mt-2">
             {/* logo */}
             <Link to={'/'}>
@@ -64,7 +64,7 @@ const Navbar = () => {
                   )}
                </button>
                <div className={`${openHamburger ? "translate-y-0" : "-translate-y-[340px]"
-                  } transition-transform duration-300 ease-in-out absolute top-4 right-4 mt-14 bg-gradient-to-l from-blue-200 border border-blue-300 px-5 py-6 rounded-md shadow-lg flex flex-col gap-2`}
+                  } transition-transform duration-300 ease-in-out absolute top-4 right-4 mt-14 z-50 bg-gradient-to-r bg-white  border border-blue-600 px-5 py-6 rounded-md shadow-lg flex flex-col gap-2`}
                >
                   {Menus.map((item, index) => (
                      <NavLink
@@ -93,7 +93,7 @@ const Navbar = () => {
             </div>
 
             {/* Navmenu Website */}
-            <div className="hidden lg:flex lg:gap-32 lg:-ml-[600px]">
+            <div className="hidden lg:flex lg:gap-32 lg:-ml-[500px]">
                {Menus.map((item, index) => (
                   <NavLink
                      key={index}

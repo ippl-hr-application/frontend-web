@@ -4,6 +4,8 @@ import HomePage from "./pages/HomePage"
 import FiturPage from "./pages/FiturPage"
 import TentangPage from "./pages/TentangPage"
 import HargaPage from "./pages/HargaPage"
+import LupaPassword from "./pages/LupaPassword"
+
 
 function App() {
 
@@ -18,6 +20,10 @@ function App() {
           <Route
             path="/login"
             element={<LoginPage />}
+          />
+          <Route
+            path="/verify-email"
+            element={<LupaPassword/>}
           />
           <Route 
             path="/fitur"
