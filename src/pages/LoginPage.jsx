@@ -105,7 +105,7 @@ const LoginPage = () => {
                                  value={password}
                                  onChange={(event) => {
                                     setPassword(event.target.value);
-                                    // Hapus pesan kesalahan saat pengguna mulai mengetik ulang
+                                    // Hapus pesan kesalahan saat pengguna mulai mengetik ulang OKEEE
                                     setErrorMessagePass("");
                                  }}
                               />
@@ -177,7 +177,7 @@ const LoginPage = () => {
                   </div>
                </div>
             </div>
-            
+
             {/* copyright */}
             <div className="">
                <CopyRight />
