@@ -6,6 +6,7 @@ import { RxCross2 } from "react-icons/rx";
 
 const Navbar = () => {
    const [openHamburger, setOpenHamburger] = useState(false);
+   const [navbar, setNavbar] = useState(false);
 
    const handleHamburgerClick = (e) => {
       e.stopPropagation();
@@ -39,11 +40,21 @@ const Navbar = () => {
       }
    ]
 
+   // logic navbar on scroll to blur background
+   const changeBackground = () => {
+      if (window.scrollY >= 80) {
+         setNavbar(true);
+      } else {
+         setNavbar(false);
+      }
+   };
+   window.addEventListener("scroll", changeBackground);
+
    return (
-      <nav className="w-full shadow-md">
+      <nav className={`w-full shadow-md fixed z-20 bg-white pb-2 ${navbar ? "bg-opacity-60 backdrop-blur-sm shadow-slate-500 shadow-sm duration-500" : ""}`}>
          <div className="flex justify-between items-center mx-4 mt-2">
             {/* logo */}
-            <Link to={'/'}>
+            <Link to={'/'} className="lg:hidden">
                <img
                   src={LogoMeraih}
                   alt="LogoMeraih"
@@ -54,7 +65,7 @@ const Navbar = () => {
             <div className="flex lg:hidden">
                {/* Navmenu */}
                <button
-                  className="text-blue-600"
+                  className="text-blue-700"
                   onClick={handleHamburgerClick}
                >
                   {openHamburger ? (
@@ -64,7 +75,7 @@ const Navbar = () => {
                   )}
                </button>
                <div className={`${openHamburger ? "translate-y-0" : "-translate-y-[340px]"
-                  } transition-transform duration-300 ease-in-out absolute top-4 right-4 mt-14 z-50 bg-gradient-to-r bg-white  border border-blue-600 px-5 py-6 rounded-md shadow-lg flex flex-col gap-2`}
+                  } transition-transform duration-300 ease-in-out absolute top-4 right-4 mt-14 z-50 bg-gradient-to-r bg-white  border border-blue-700 px-5 py-6 rounded-md shadow-lg flex flex-col gap-2`}
                >
                   {Menus.map((item, index) => (
                      <NavLink
@@ -79,12 +90,12 @@ const Navbar = () => {
                   </div>
                   <NavLink
                      type="button"
-                     className="w-full cursor-pointer text-blue-600 hover:text-blue-800 font-medium"
+                     className="w-full cursor-pointer text-blue-700 hover:text-blue-800 font-medium"
                      as={Link}
                      to="/login">
                      Sign In
                   </NavLink>
-                  <div className="border-none px-4 py-2 bg-blue-600 rounded-2xl text-white">
+                  <div className="border-none px-4 py-2 bg-blue-700 rounded-2xl text-white">
                      <button>
                         Coba Gratis
                      </button>
@@ -93,29 +104,38 @@ const Navbar = () => {
             </div>
 
             {/* Navmenu Website */}
-            <div className="hidden lg:flex lg:gap-32 lg:-ml-[500px]">
-               {Menus.map((item, index) => (
-                  <NavLink
-                     key={index}
-                     to={item.link}
-                     className="text-lg hover:text-blue-600 hover:scale-105 duration-300 ease-in-out"
-                  >
-                     {item.name}
-                  </NavLink>
-               ))}
+            <div className="hidden lg:flex lg:items-center lg:gap-14">
+               <Link to={'/'} className="">
+                  <img
+                     src={LogoMeraih}
+                     alt="LogoMeraih"
+                     className="w-14 h-14 lg:w-20 lg:h-20"
+                  />
+               </Link>
+               <div className="hidden lg:flex lg:gap-32">
+                  {Menus.map((item, index) => (
+                     <NavLink
+                        key={index}
+                        to={item.link}
+                        className="text-lg hover:text-blue-700 hover:scale-105 duration-300 ease-in-out"
+                     >
+                        {item.name}
+                     </NavLink>
+                  ))}
+               </div>
             </div>
 
             {/* login dan coba gratis */}
             <div className="hidden lg:flex items-center gap-7">
                <NavLink
                   type="button"
-                  className="cursor-pointer text-blue-600 hover:text-blue-800 font-medium text-lg"
+                  className="cursor-pointer text-blue-700 hover:text-blue-800 font-medium text-lg"
                   as={Link}
                   to="/login">
                   Sign In
                </NavLink>
                <div className="w-px h-8 bg-black"></div>
-               <button className="border-none px-6 py-2 bg-blue-600 hover:bg-blue-700 duration-300 rounded-2xl text-white font-medium text-lg">
+               <button className="border-none px-6 py-2 bg-blue-700 hover:bg-blue-800 duration-300 rounded-2xl text-white font-medium text-lg">
                   Coba Gratis
                </button>
             </div>

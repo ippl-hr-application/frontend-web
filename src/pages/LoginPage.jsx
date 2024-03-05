@@ -66,115 +66,123 @@ const LoginPage = () => {
    return (
       <div>
          <Navbar />
-         <div className="w-full">
-            <div className="bg-fixed" style={{ backgroundImage: `url(${GambarLogin})` }}>
-               <div className="px-4 py-4 ">
-                  <div className="border-2 rounded-2xl p-8 shadow-md backdrop-blur-md">
-                     {/* heading */}
-                     <div className="mb-6">
-                        <h1 className="text-3xl font-bold mb-1">Sign In</h1>
-                        <p className="text-sm">Silahkan masukkan detail login anda untuk masuk</p>
-                     </div>
-                     {/* form login */}
-                     <form action="submit" onSubmit={handleLogin} className="flex flex-col gap-4">
-                        <div className="relative ">
-                           <label htmlFor="email" className=" w-2/3 font-medium flex flex-col-reverse gap-2">
-                              <input
-                                 id="email"
-                                 type="email"
-                                 name="email"
-                                 className="border-2 py-2 px-4 rounded-3xl shadow-md"
-                                 value={email}
-                                 onChange={(event) => {
-                                    setEmail(event.target.value);
-                                    setErrorMessageEmail("");
-                                 }}
-                              />
-                              Email Address
-                           </label>
-                           {errorMessageEmail && <p className="text-color-warn text-xs mb-2">{errorMessageEmail}</p>}
-                           <BsPerson className="absolute top-10 right-40 w-6 h-6" />
-                        </div>
-                        <div className="relative mt-2">
-                           <label htmlFor="password" className=" w-2/3 font-medium flex flex-col-reverse gap-2">
-                              <input
-                                 id="password"
-                                 type={showPassword ? "text" : "password"}
-                                 name="password"
-                                 className="border-2 py-2 px-4 rounded-3xl shadow-md"
-                                 value={password}
-                                 onChange={(event) => {
-                                    setPassword(event.target.value);
-                                    // Hapus pesan kesalahan saat pengguna mulai mengetik ulang OKEEE
-                                    setErrorMessagePass("");
-                                 }}
-                              />
-                              Password
-                              <button
-                                 className="absolute top-11 right-40"
-                                 type="button"
-                                 aria-label="toggle password visibility"
-                                 onClick={togglePassword}
-                              >
-                                 {showPassword ? (
-                                    <BsEye className="border-none" />
-                                 ) : (
-                                    <BsEyeSlash className="border-none" />
-                                 )}
-                              </button>
-                           </label>
-                           {errorMessagePass && <p className="text-color-warn text-xs mb-2">{errorMessagePass}</p>}
-                        </div>
-                        <div className="flex justify-between mt-2">
-                           <label htmlFor="remember me" className="flex items-center gap-2">
-                              <input
-                                 id="remember me"
-                                 type="checkbox"
-                                 name="checkbox"
-                                 className="w-4 h-4 accent-blue-800"
-                                 checked={rememberMe}
-                                 onChange={handleRememberMe}
-                              />
-                              Buat saya tetap masuk
-                           </label>
-                           <Link to={"/verify-email"} className="text-blue-600 py-1 px-3 shadow-sm bg-white rounded-3xl">
-                              Lupa Kata Sandi?
-                           </Link>
-                        </div>
-                        <div className="flex flex-col gap-4 items-center">
-                           <button className="border-none bg-blue-600 text-white px-4 py-3 rounded-3xl w-full font-medium">
-                              Sign In
-                           </button>
-                           <div className="h-px w-1/2 bg-black mt-2"></div>
-                           <p>Atau</p>
-                           <div className="flex flex-col gap-3">
-                              {/* tombol google */}
-                              <button className="flex items-center gap-2 border-2 bg-white rounded-3xl py-2 px-4 shadow-md">
-                                 <FcGoogle className="w-6 h-6" />
-                                 <p>
-                                    Masuk dengan Google
-                                 </p>
-                              </button>
-
-                              {/* tombol id karyawan */}
-                              <button className="flex items-center gap-2 border-2 bg-white rounded-3xl py-2 px-4 shadow-md">
-                                 <FaAddressCard className="w-6 h-6" />
-                                 <p>
-                                    Masuk dengan ID Karyawan
-                                 </p>
-                              </button>
-
-                              {/* tombol WA */}
-                              <button className="flex items-center gap-2 border-2 bg-white rounded-3xl py-2 px-4 shadow-md">
-                                 <ImWhatsapp className="w-6 h-6 bg-green-500 text-white rounded-full" />
-                                 <p>
-                                    Masuk dengan ID Karyawan
-                                 </p>
-                              </button>
-                           </div>
-                        </div>
-                     </form>
+         <div className="w-full pt-16 lg:pt-24">
+            <div className="px-4 py-4 lg:flex">
+               {/* card form login */}
+               <div className="border-2 rounded-2xl py-8 px-14 shadow-lg border-slate-300 bg-blue-100 lg:bg-transparent lg:w-1/2 lg:border-none lg:shadow-none">
+                  {/* heading */}
+                  <div className="mb-6 flex flex-col justify-center items-center lg:items-start">
+                     <h1 className="text-3xl font-bold mb-1 text-blue-700 lg:text-4xl">Sign In</h1>
+                     <p className="text-sm font-light lg:text-base">Silahkan masukkan detail login anda untuk masuk</p>
+                     <img src={GambarLogin} alt="GambarLogin" className="h-60 lg:hidden" />
                   </div>
+                  {/* form login */}
+                  <form action="submit" onSubmit={handleLogin} className="flex flex-col gap-4">
+                     {/* email */}
+                     <div className="relative">
+                        <label htmlFor="email" className="w-full font-medium flex flex-col-reverse gap-2">
+                           <input
+                              id="email"
+                              type="email"
+                              name="email"
+                              className="border-2 py-2 px-4 rounded-3xl shadow-md lg:px-6 lg:py-3 lg:border-[1px]"
+                              value={email}
+                              onChange={(event) => {
+                                 setEmail(event.target.value);
+                                 setErrorMessageEmail("");
+                              }}
+                           />
+                           Email Address
+                        </label>
+                        {errorMessageEmail && <p className="text-color-warn text-xs mb-2">{errorMessageEmail}</p>}
+                        <BsPerson className="absolute top-10 right-4 w-6 h-6 text-slate-400 lg:top-11" />
+                     </div>
+                     {/* password */}
+                     <div className="relative mt-2">
+                        <label htmlFor="password" className="w-full font-medium flex flex-col-reverse gap-2">
+                           <input
+                              id="password"
+                              type={showPassword ? "text" : "password"}
+                              name="password"
+                              className="border-2 py-2 px-4 rounded-3xl shadow-md lg:px-6 lg:py-3 lg:border-[1px]"
+                              value={password}
+                              onChange={(event) => {
+                                 setPassword(event.target.value);
+                                 // Hapus pesan kesalahan saat pengguna mulai mengetik ulang OKEEE
+                                 setErrorMessagePass("");
+                              }}
+                           />
+                           Password
+                           <button
+                              className="absolute top-11 right-4 lg:top-12 lg:right-5"
+                              type="button"
+                              aria-label="toggle password visibility"
+                              onClick={togglePassword}
+                           >
+                              {showPassword ? (
+                                 <BsEye className="border-none text-slate-500 lg:w-5 lg:h-5" />
+                              ) : (
+                                    <BsEyeSlash className="border-none text-slate-500 lg:w-5 lg:h-5" />
+                              )}
+                           </button>
+                        </label>
+                        {errorMessagePass && <p className="text-color-warn text-xs mb-2">{errorMessagePass}</p>}
+                     </div>
+                     {/* ingat akun dan lupa sandi */}
+                     <div className="flex justify-between mt-2">
+                        <label htmlFor="remember me" className="flex items-center gap-2 text-sm font-light">
+                           <input
+                              id="remember me"
+                              type="checkbox"
+                              name="checkbox"
+                              className="w-4 h-4 accent-blue-800"
+                              checked={rememberMe}
+                              onChange={handleRememberMe}
+                           />
+                           Buat saya tetap masuk
+                        </label>
+                        <Link to={"/verify-email"} className="text-blue-700 py-1 px-3 shadow-sm  rounded-3xl text-sm font-light hover:text-blue-900">
+                           Lupa Kata Sandi ?
+                        </Link>
+                     </div>
+                     {/* sign in dan  login dengan yg lain */}
+                     <div className="flex flex-col gap-4 items-center">
+                        <button className="border-none bg-blue-700 text-white px-4 py-3 rounded-3xl w-full font-medium lg:font-semibold lg:py-4 lg:shadow-lg lg:rounded-full lg:hover:bg-blue-800 duration-200">
+                           Sign In
+                        </button>
+                        <div className="h-px w-1/2 bg-black mt-2"></div>
+                        <p>Atau</p>
+                        <div className="flex flex-col gap-3 lg:gap-6">
+                           {/* tombol google */}
+                           <button className="flex items-center gap-2 border-2 bg-white rounded-3xl py-2 px-4 shadow-md lg:border-1 lg:py-3 lg:px-10 lg:rounded-full lg:hover:bg-gradient-to-r from-red-500 via-orange-300 to-green-500 ">
+                              <FcGoogle className="w-6 h-6 lg:w-8 lg:h-8" />
+                              <p>
+                                 Masuk dengan Google
+                              </p>
+                           </button>
+
+                           {/* tombol id karyawan */}
+                           <button className="flex items-center gap-2 border-2 bg-white rounded-3xl py-2 px-4 shadow-md lg:border-1 lg:py-3 lg:px-10 lg:rounded-full lg:hover:bg-black duration-300 lg:hover:text-white">
+                              <FaAddressCard className="w-6 h-6 lg:w-8 lg:h-8" />
+                              <p>
+                                 Masuk dengan ID Karyawan
+                              </p>
+                           </button>
+
+                           {/* tombol WA */}
+                           <button className="flex items-center gap-2 border-2 bg-white rounded-3xl py-2 px-4 shadow-md lg:border-1 lg:py-3 lg:px-10 lg:rounded-full lg:hover:bg-green-500 lg:hover:text-white group duration-300">
+                              <ImWhatsapp className="w-6 h-6 lg:w-8 lg:h-8 bg-green-500 text-white rounded-full lg:group-hover:text-green-500 lg:group-hover:bg-white" />
+                              <p>
+                                 Masuk dengan ID Karyawan
+                              </p>
+                           </button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+               {/* card foto mode web */}
+               <div className="hidden lg:flex bg-violet-100 p-20">
+                  <img src={GambarLogin} alt="GambarLoginWeb" />
                </div>
             </div>
 
