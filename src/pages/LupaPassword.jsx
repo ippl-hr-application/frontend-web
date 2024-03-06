@@ -3,6 +3,7 @@ import GambarLupaPassword from "../assets/GambarLupaPassword.png"
 import LogoMeraih from "../assets/Logo Meraih.svg"
 import CopyRight from "../components/CopyRight"
 import { MdOutlineEmail } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const LupaPassword = () => {
    const [email, setEmail] = useState("");
@@ -47,9 +48,12 @@ const LupaPassword = () => {
                   <MdOutlineEmail className="absolute text-slate-400 right-5 top-10 w-6 h-6 lg:top-[121px] lg:right-14 " />
                   {errorMessageEmail && <p className="text-color-warn text-xs mb-2">{errorMessageEmail}</p>}
                </div>
-               <button className="border-2 py-2 px-4 rounded-3xl bg-blue-700 text-white w-full lg:py-3 lg:font-medium">
-                  Kirim
-               </button>
+               {/* ini masih sementara sembari nunggu API */}
+               <Link as={Link} to={"/verify-sandi"} className="border-2 py-2 px-4 rounded-3xl bg-blue-700 text-white w-full lg:py-3 lg:font-medium text-center">
+                  <button >
+                     Kirim
+                  </button>
+               </Link>
             </div>
          </form>
 

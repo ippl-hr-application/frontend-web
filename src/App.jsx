@@ -6,6 +6,7 @@ import TentangPage from "./pages/TentangPage"
 import HargaPage from "./pages/HargaPage"
 import LupaPassword from "./pages/LupaPassword"
 import RegisterPage from "./pages/RegisterPage"
+import UbahSandi from "./pages/UbahSandi"
 
 function App() {
 
@@ -24,6 +25,10 @@ function App() {
           <Route
             path="/verify-email"
             element={<LupaPassword/>}
+          />
+          <Route
+            path="/verify-sandi"
+            element={<UbahSandi/>}
           />
           <Route
             path="/register"
