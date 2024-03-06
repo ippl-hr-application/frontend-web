@@ -74,7 +74,7 @@ const Navbar = () => {
                      <FiMenu className="w-10 h-10" />
                   )}
                </button>
-               <div className={`${openHamburger ? "translate-y-0" : "-translate-y-[340px]"
+               <div className={`${openHamburger ? "translate-y-0" : "-translate-y-[380px] ease-in-out"
                   } transition-transform duration-300 ease-in-out absolute top-4 right-4 mt-14 z-50 bg-gradient-to-r bg-white  border border-blue-700 px-5 py-6 rounded-md shadow-lg flex flex-col gap-2`}
                >
                   {Menus.map((item, index) => (
@@ -100,6 +100,10 @@ const Navbar = () => {
                         Coba Gratis
                      </button>
                   </div>
+                  <NavLink className="border-none px-4 py-2 bg-blue-700 rounded-2xl text-white mt-2 text-center"
+                  to={'/register'}>
+                     <button className="">Sign Up</button>
+                  </NavLink>
                </div>
             </div>
 

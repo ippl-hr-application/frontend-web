@@ -3,8 +3,8 @@ import Navbar from "../components/Navbar"
 const FiturPage = () => {
    return (
       <>
-         <Navbar/>
-         <div>FiturPage</div>
+         <Navbar />
+         <div className="pt-48">FiturPage</div>
       </>
    )
 }
