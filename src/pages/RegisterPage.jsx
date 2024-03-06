@@ -7,6 +7,7 @@ import LogoMeraih from "../assets/Logo Meraih.svg"
 import GambarLogin from "../assets/GambarLogin.png"
 import { useState } from "react";
 import CopyRight from "../components/CopyRight";
+import { Link } from "react-router-dom";
 
 const RegisterPage = () => {
    const [nama, setNama] = useState("");
@@ -19,7 +20,7 @@ const RegisterPage = () => {
    const [errorMessageHp, setErrorMessageHp] = useState("");
    const [errorMessageEmail, setErrorMessageEmail] = useState("");
    const [errorMessagePass, setErrorMessagePass] = useState("");
-   
+
    const [showPassword, setShowPassword] = useState(false);
 
    const handleRegis = (event) => {
@@ -57,7 +58,9 @@ const RegisterPage = () => {
    return (
       <>
          <nav className="mx-4 mt-2">
-            <img src={LogoMeraih} alt="LogoMeraih" className="w-20 p-2" />
+            <Link to={'/'}>
+               <img src={LogoMeraih} alt="LogoMeraih" className="w-20 p-2" />
+            </Link>
          </nav>
          {/* <div className="w-full">
             <div className="mx-4 border-2 shadow-md rounded-3xl p-8">
