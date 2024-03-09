@@ -101,47 +101,49 @@ const Navbar = () => {
                      </button>
                   </div>
                   <NavLink className="border-none px-4 py-2 bg-blue-700 rounded-2xl text-white mt-2 text-center"
-                  to={'/register'}>
+                     to={'/register'}>
                      <button className="">Sign Up</button>
                   </NavLink>
                </div>
             </div>
 
-            {/* Navmenu Website */}
-            <div className="hidden lg:flex lg:items-center lg:gap-14">
-               <Link to={'/'} className="">
-                  <img
-                     src={LogoMeraih}
-                     alt="LogoMeraih"
-                     className="w-14 h-14 lg:w-20 lg:h-20"
-                  />
-               </Link>
-               <div className="hidden lg:flex lg:gap-32">
-                  {Menus.map((item, index) => (
-                     <NavLink
-                        key={index}
-                        to={item.link}
-                        className="text-lg hover:text-blue-700 hover:scale-105 duration-300 ease-in-out"
-                     >
-                        {item.name}
-                     </NavLink>
-                  ))}
+            <div className="hidden container mx-auto lg:flex justify-between">
+               {/* Navmenu Website */}
+               <div className="hidden lg:flex lg:items-center lg:gap-14">
+                  <Link to={'/'} className="">
+                     <img
+                        src={LogoMeraih}
+                        alt="LogoMeraih"
+                        className="w-14 h-14 lg:w-20 lg:h-20"
+                     />
+                  </Link>
+                  <div className="hidden lg:flex lg:gap-32">
+                     {Menus.map((item, index) => (
+                        <NavLink
+                           key={index}
+                           to={item.link}
+                           className="text-lg hover:text-blue-700 hover:scale-105 duration-300 ease-in-out"
+                        >
+                           {item.name}
+                        </NavLink>
+                     ))}
+                  </div>
                </div>
-            </div>
 
-            {/* login dan coba gratis */}
-            <div className="hidden lg:flex items-center gap-7">
-               <NavLink
-                  type="button"
-                  className="cursor-pointer text-blue-700 hover:text-blue-800 font-medium text-lg"
-                  as={Link}
-                  to="/login">
-                  Sign In
-               </NavLink>
-               <div className="w-px h-8 bg-black"></div>
-               <button className="border-none px-6 py-2 bg-blue-700 hover:bg-blue-800 duration-300 rounded-2xl text-white font-medium text-lg">
-                  Coba Gratis
-               </button>
+               {/* login dan coba gratis */}
+               <div className="hidden lg:flex items-center gap-7">
+                  <NavLink
+                     type="button"
+                     className="cursor-pointer text-blue-700 hover:text-blue-800 font-medium text-lg"
+                     as={Link}
+                     to="/login">
+                     Sign In
+                  </NavLink>
+                  <div className="w-px h-8 bg-black"></div>
+                  <button className="border-none px-6 py-2 bg-blue-700 hover:bg-blue-800 duration-300 rounded-2xl text-white font-medium text-lg">
+                     Coba Gratis
+                  </button>
+               </div>
             </div>
          </div>
       </nav>

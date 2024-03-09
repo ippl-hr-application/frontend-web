@@ -8,7 +8,14 @@ export default {
     extend: {
       fontFamily: {
         poppins: ["Poppins"],
-      }
+      },
+      colors: {
+        primary: "#2051E5",
+        secondary: "#0065FF",
+      },
+      backgroundColor: {
+        layer: "#84AEFF",
+      },
     },
   },
   plugins: [],
