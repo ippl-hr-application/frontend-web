@@ -122,27 +122,32 @@ const LoginPage = () => {
                               {showPassword ? (
                                  <BsEye className="border-none text-slate-500 lg:w-5 lg:h-5" />
                               ) : (
-                                    <BsEyeSlash className="border-none text-slate-500 lg:w-5 lg:h-5" />
+                                 <BsEyeSlash className="border-none text-slate-500 lg:w-5 lg:h-5" />
                               )}
                            </button>
                         </label>
                         {errorMessagePass && <p className="text-color-warn text-xs mb-2">{errorMessagePass}</p>}
                      </div>
                      {/* ingat akun dan lupa sandi */}
-                     <div className="flex justify-between mt-2">
-                        <label htmlFor="remember me" className="flex items-center gap-2 text-sm font-light">
-                           <input
-                              id="remember me"
-                              type="checkbox"
-                              name="checkbox"
-                              className="w-4 h-4 accent-blue-800"
-                              checked={rememberMe}
-                              onChange={handleRememberMe}
-                           />
-                           Buat saya tetap masuk
-                        </label>
-                        <Link to={"/verify-email"} className="text-blue-700 py-1 px-3 shadow-sm  rounded-3xl text-sm font-light hover:text-blue-900">
-                           Lupa Kata Sandi ?
+                     <div className="flex flex-col gap-2 mt-2 ">
+                        <div className="flex justify-between">
+                           <label htmlFor="remember me" className="flex items-center gap-2 text-sm font-light">
+                              <input
+                                 id="remember me"
+                                 type="checkbox"
+                                 name="checkbox"
+                                 className="w-4 h-4 accent-blue-800"
+                                 checked={rememberMe}
+                                 onChange={handleRememberMe}
+                              />
+                              Buat saya tetap masuk
+                           </label>
+                           <Link to={"/verify-email"} className="text-red-700 py-1 px-3 shadow-sm  rounded-3xl text-sm font-light hover:text-red-900">
+                              Lupa Kata Sandi ?
+                           </Link>
+                        </div>
+                        <Link to={'/register'} className="font-light text-sm text-blue-700 hover:text-blue-900">
+                           Buat Akun
                         </Link>
                      </div>
                      {/* sign in dan  login dengan yg lain */}
