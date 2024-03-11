@@ -8,6 +8,7 @@ import CopyRight from "../components/CopyRight";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ButtonBackToHome from "../components/ButtonBackToHome";
 
 const LoginPage = () => {
    const [email, setEmail] = useState("");
@@ -67,9 +68,17 @@ const LoginPage = () => {
       <div>
          <Navbar />
          <div className="w-full pt-16 lg:pt-24">
-            <div className="px-4 py-4 lg:flex">
+            <div className="px-4 py-4 lg:flex mt-2">
+               {/* button back to HomePage mode mobile*/}
+               <div className="flex lg:hidden">
+                  <ButtonBackToHome />
+               </div>
                {/* card form login */}
-               <div className="border-2 rounded-2xl py-8 px-14 shadow-lg border-slate-300 bg-blue-100 lg:bg-transparent lg:w-1/2 lg:border-none lg:shadow-none">
+               <div className="border-2 mt-2 rounded-2xl py-8 px-14 shadow-lg border-slate-300 bg-blue-100 lg:flex lg:flex-col lg:gap-4 lg:bg-transparent lg:w-1/2 lg:border-none lg:shadow-none">
+                  {/* button back to HomePage mode web*/}
+                  <div className="hidden lg:flex">
+                     <ButtonBackToHome />
+                  </div>
                   {/* heading */}
                   <div className="mb-6 flex flex-col justify-center items-center lg:items-start">
                      <h1 className="text-3xl font-bold mb-1 text-blue-700 lg:text-4xl">Sign In</h1>
