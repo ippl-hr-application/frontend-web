@@ -11,8 +11,9 @@ import kontenSatu from "../assets/kontenSatu.png"
 import kontenDua from "../assets/KontenDua.png";
 import AOS from "aos";
 import "../../node_modules/aos/dist/aos.css"
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import iconBolaMeraih from "../assets/iconBolaMeraih.png"
+import Footer from "../components/Footer";
 
 const HomePage = () => {
 
@@ -42,10 +43,20 @@ const HomePage = () => {
       })
    }, [])
 
+   const linkRef = useRef(null);
+   // back to MainSection when on click text MovieList in Footer from homepage
+   const goto = (ref) => {
+      window.scrollTo({
+         top: ref.offsetTop,
+         left: 0,
+         behavior: "smooth",
+      });
+   };
+
    return (
       <div>
          <Navbar />
-         <div className="pt-[73px] container mx-auto">
+         <div className="pt-[73px] container mx-auto" ref={linkRef}>
             {/* Mainsaction */}
             <div className="relative pt-4 bg-gradient-to-r from-blue-300 shadow-2xl mb-10 md:pt-6 lg:pt-4">
                {/* konten mainsaction */}
@@ -459,6 +470,10 @@ const HomePage = () => {
                </div>
             </div>
          </div>
+         <Footer
+            linkRef={linkRef}
+            goto={goto}
+         />
       </div>
    )
 }
