@@ -8,6 +8,7 @@ import CopyRight from "../components/CopyRight";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ButtonBackToHome from "../components/ButtonBackToHome";
 
 const LoginPage = () => {
    const [email, setEmail] = useState("");
@@ -67,9 +68,17 @@ const LoginPage = () => {
       <div>
          <Navbar />
          <div className="w-full pt-16 lg:pt-24">
-            <div className="px-4 py-4 lg:flex">
+            <div className="px-4 py-4 lg:flex mt-2">
+               {/* button back to HomePage mode mobile*/}
+               <div className="flex lg:hidden">
+                  <ButtonBackToHome />
+               </div>
                {/* card form login */}
-               <div className="border-2 rounded-2xl py-8 px-14 shadow-lg border-slate-300 bg-blue-100 lg:bg-transparent lg:w-1/2 lg:border-none lg:shadow-none">
+               <div className="border-2 mt-2 rounded-2xl py-8 px-14 shadow-lg border-slate-300 bg-blue-100 lg:flex lg:flex-col lg:gap-4 lg:bg-transparent lg:w-1/2 lg:border-none lg:shadow-none">
+                  {/* button back to HomePage mode web*/}
+                  <div className="hidden lg:flex">
+                     <ButtonBackToHome />
+                  </div>
                   {/* heading */}
                   <div className="mb-6 flex flex-col justify-center items-center lg:items-start">
                      <h1 className="text-3xl font-bold mb-1 text-blue-700 lg:text-4xl">Sign In</h1>
@@ -122,27 +131,32 @@ const LoginPage = () => {
                               {showPassword ? (
                                  <BsEye className="border-none text-slate-500 lg:w-5 lg:h-5" />
                               ) : (
-                                    <BsEyeSlash className="border-none text-slate-500 lg:w-5 lg:h-5" />
+                                 <BsEyeSlash className="border-none text-slate-500 lg:w-5 lg:h-5" />
                               )}
                            </button>
                         </label>
                         {errorMessagePass && <p className="text-color-warn text-xs mb-2">{errorMessagePass}</p>}
                      </div>
                      {/* ingat akun dan lupa sandi */}
-                     <div className="flex justify-between mt-2">
-                        <label htmlFor="remember me" className="flex items-center gap-2 text-sm font-light">
-                           <input
-                              id="remember me"
-                              type="checkbox"
-                              name="checkbox"
-                              className="w-4 h-4 accent-blue-800"
-                              checked={rememberMe}
-                              onChange={handleRememberMe}
-                           />
-                           Buat saya tetap masuk
-                        </label>
-                        <Link to={"/verify-email"} className="text-blue-700 py-1 px-3 shadow-sm  rounded-3xl text-sm font-light hover:text-blue-900">
-                           Lupa Kata Sandi ?
+                     <div className="flex flex-col gap-2 mt-2 ">
+                        <div className="flex justify-between">
+                           <label htmlFor="remember me" className="flex items-center gap-2 text-sm font-light">
+                              <input
+                                 id="remember me"
+                                 type="checkbox"
+                                 name="checkbox"
+                                 className="w-4 h-4 accent-blue-800"
+                                 checked={rememberMe}
+                                 onChange={handleRememberMe}
+                              />
+                              Buat saya tetap masuk
+                           </label>
+                           <Link to={"/verify-email"} className="text-red-700 py-1 px-3 shadow-sm  rounded-3xl text-sm font-light hover:text-red-900">
+                              Lupa Kata Sandi ?
+                           </Link>
+                        </div>
+                        <Link to={'/register'} className="font-light text-sm text-blue-700 hover:text-blue-900">
+                           Buat Akun
                         </Link>
                      </div>
                      {/* sign in dan  login dengan yg lain */}

@@ -8,6 +8,7 @@ import GambarLogin from "../assets/GambarLogin.png"
 import { useState } from "react";
 import CopyRight from "../components/CopyRight";
 import { Link } from "react-router-dom";
+import ButtonBackToHome from "../components/ButtonBackToHome";
 
 const RegisterPage = () => {
    const [nama, setNama] = useState("");
@@ -62,39 +63,19 @@ const RegisterPage = () => {
                <img src={LogoMeraih} alt="LogoMeraih" className="w-20 p-2" />
             </Link>
          </nav>
-         {/* <div className="w-full">
-            <div className="mx-4 border-2 shadow-md rounded-3xl p-8">
-               <div className="flex flex-col gap-2 mb-4">
-                  <h1>Sign Up</h1>
-                  <p>Silahkan masukkan detail register anda untuk masuk</p>
-               </div>
-               <form action="">
-                  <div className="flex flex-col gap-2">
-                     <label htmlFor="nama">Nama Lengkap</label>
-                     <input
-                        type="text"
-                        name="nama"
-                        id="nama"
-                        placeholder="nama"
-                        className="px-4 py-2 rounded-3xl border-2 border-slate-600 shadow-sm"
-                     />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                     <label htmlFor="perusahaan">Nama Perusahaan</label>
-                     <input type="text" name="perusahaan" id="perusahaan" className="px-4 py-2 rounded-3xl border-2 border-slate-600 shadow-sm"/>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                     <label htmlFor="hp">Nomor Handphone</label>
-                     <input type="telepon" name="hp" id="hp" className="px-4 py-2 rounded-3xl border-2 border-slate-600 shadow-sm"/>
-                  </div>
-               </form>
-            </div>
-         </div> */}
 
          <div className="w-full">
             <div className="px-4 py-2 lg:flex">
+               {/* button back to home */}
+               <div className="flex lg:hidden mb-4">
+                  <ButtonBackToHome />
+               </div>
                {/* card form Regis */}
                <div className="border-2 rounded-2xl py-8 px-14 shadow-lg border-slate-300 bg-blue-100 lg:bg-transparent lg:w-1/2 lg:border-none lg:shadow-none">
+                  {/* button back to home */}
+                  <div className="hidden lg:flex mb-4">
+                     <ButtonBackToHome />
+                  </div>
                   {/* heading */}
                   <div className="mb-6 flex flex-col justify-center text-center items-center lg:items-start">
                      <h1 className="text-3xl font-bold mb-1 text-blue-700 lg:text-4xl">Sign Up</h1>
