@@ -25,4 +25,3 @@ dist-ssr
 
 /node_modules
 .env
-VITE_REACT_API_URL=http://localhost:3000
