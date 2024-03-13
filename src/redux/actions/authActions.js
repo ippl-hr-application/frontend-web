@@ -19,7 +19,7 @@ export const login = (email, password, navigate) => async (dispatch) => {
       dispatch(setToken(token));
       // redirect to home
       // navigate("/");
-      toast.success("Login Berhasil");
+      toast.success(respons?.data?.message);
       setTimeout(() => {
          navigate("/");
       }, 2000); // Ganti nilai 1000 dengan durasi yang diinginkan (dalam milidetik)
