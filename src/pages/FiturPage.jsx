@@ -1,5 +1,5 @@
-import React from "react";
 import Navbar from "../components/Navbar";
+
 import FiturCard from "../components/FiturCard";
 import { BsFillCheckCircleFill } from "react-icons/bs"; 
 import GambarFitur from "../assets/GambarFitur.png";
@@ -20,8 +20,6 @@ import AOS from "aos";
 import "../../node_modules/aos/dist/aos.css";
 import Footer from "../components/Footer";
 import { useEffect} from "react";
-
-
 
 const FiturPage = () => {
   const keunggulan = [
