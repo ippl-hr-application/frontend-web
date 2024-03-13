@@ -21,7 +21,7 @@ const TentangPage = () => {
 
         <div className="flex flex-col md:flex-row md:mt-28">
           <div className="flex flex-col justify-center md:mr-40">
-            <div className="text-3xl md:text-5xl font-semibold text-blue-900">
+            <div className="text-3xl my-5 md:text-5xl font-semibold text-blue-900">
               WHO WE ARE
             </div>
             <p className="py-3 text-base md:text-lg">
