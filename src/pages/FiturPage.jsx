@@ -5,6 +5,22 @@ import { BsFillCheckCircleFill } from "react-icons/bs";
 import GambarFitur from "../assets/GambarFitur.png";
 import { ImWhatsapp } from "react-icons/im";
 import { FaAngleRight } from "react-icons/fa";
+import GambarPayroll from "../assets/GambarPayroll.png"
+import GambarKehadiran from "../assets/GambarKehadiran.png"
+import GambarHRIS from "../assets/GambarHRIS.png"
+import GambarExpenseManagement from "../assets/GambarExpenseManagement.png";
+import GambarEmployee from "../assets/GambarEmployee.png";
+import GambarEmployeeBenefits from "../assets/GambarEmployeeBenefits.png";
+import GambarHRHelpDesk from "../assets/GambarHRHelpDesk.png";
+import GambarForms from "../assets/GambarForms.png";
+import GambarPerformanceManagement from "../assets/GambarPerformanceManagement.png";
+import GambarHRAnalytics from "../assets/GambarHRAnalytics.png";
+import Gambar3 from "../assets/Gambar3.png";
+import AOS from "aos";
+import "../../node_modules/aos/dist/aos.css";
+import Footer from "../components/Footer";
+import { useEffect} from "react";
+
 
 
 const FiturPage = () => {
@@ -32,16 +48,23 @@ const FiturPage = () => {
     },
   ];
 
+  // AOS (Animate On Scroll)
+  useEffect(() => {
+    AOS.init({
+      once: false,
+    });
+  }, []);
+
   return (
     <>
       <Navbar />
-      <div className="container pt-20 mx-auto">
-        <div className="relative bg-gradient-to-r from-blue-300 shadow-2xl mb-10 md:pt-6 lg:pt-4">
-          <div className="text-center mt-24">
-            <div className="text-3xl md:text-5xl font-semibold mb-5 text-blue-900">
+      <div className="pt-[73px] container mx-auto">
+        <div className="relative bg-gradient-to-r from-blue-300 shadow-2xl mb-10 md:pt-10 lg:pt-4">
+          <div className="text-center mt-12 md:mt-24">
+            <div className="text-3xl md:text-5xl font-semibold mb-3 md:mb-5 text-blue-900">
               Nikmati pengalaman terbaik mengelola HR dan Bisnis Anda
             </div>
-            <p className="text-lg md:text-2xl font-medium text-gray-400">
+            <p className="text-lg mb-4 md:text-2xl font-medium text-gray-400">
               Dapatkan Akses ke Fitur dan Layanan Sesuai Keinginan Anda
             </p>
           </div>
@@ -90,38 +113,106 @@ const FiturPage = () => {
         </div>
 
         {/* Fitur */}
-        <div className="flex flex-wrap justify-center mt-16">
+        <div className="text-center mt-28">
+          <div
+            data-aos="fade-up"
+            className="text-3xl md:text-5xl font-semibold mb-5 text-blue-900"
+          >
+            Pelajari dan Coba Fitur Terbaik dari HRIS Meraih
+          </div>
+        </div>
+        <div data-aos="fade-up" className="flex flex-wrap justify-center mt-16">
+          {/* Fitur 1 */}
           <FiturCard
-            imageSrc={GambarHargaBasic}
-            title="Sistem HR Basic"
-            text="Sistem HR Praktis dengan Fitur Esensial untuk Meningkatkan Efisiensi dan Mengoptimalkan Proses SDM Anda"
-            features={[
-              "Get started with messaging",
-              "Flexible team meetings",
-              "5 TB cloud storage",
-            ]}
+            imageSrc={GambarPayroll}
+            title="Payroll"
+            text="Kelola payroll lebih mudah"
           />
+          {/* Fitur 2 */}
           <FiturCard
-            imageSrc={GambarHargaPro}
-            title="Sistem HR Pro"
-            text="Sistem HR Tingkat Lanjut dengan Fitur Pendorong Produktivitas untuk Optimalisasi Operasional dan Kinerja Bisnis Anda"
-            features={[
-              "All features in Basic",
-              "Flexible call scheduling",
-              "15 TB cloud storage",
-            ]}
+            imageSrc={GambarKehadiran}
+            title="Attendance"
+            text="Atur absensi, lembur, dan shift"
           />
+          {/* Fitur 3 */}
           <FiturCard
-            imageSrc={GambarHargaMeraih460}
-            title="Sistem HR Meraih 460"
-            text="Solusi Terbaik untuk Bisnis dengan Kebutuhan Pengembangan Strategis dan Operasional yang Kompleks"
-            features={[
-              "All features in Startup",
-              "Growth oriented",
-              "Unlimited cloud storage",
-            ]}
+            imageSrc={GambarHRIS}
+            title="HRIS"
+            text="Database dan administrasi lebih efisien"
+          />
+          {/* Fitur 4 */}
+          <FiturCard
+            imageSrc={GambarExpenseManagement}
+            title="Expense Management"
+            text="Reimbursement dan peminjaman"
+          />
+          {/* Fitur 5 */}
+          <FiturCard
+            imageSrc={GambarEmployee}
+            title="Employee Self Service"
+            text="Akses mandiri kebutuhan HR"
+          />
+          {/* Fitur 6 */}
+          <FiturCard
+            imageSrc={GambarEmployeeBenefits}
+            title="Employee Benefits"
+            text="Benefit dan asuransi karyawan"
+          />
+          {/* Fitur 7 */}
+          <FiturCard
+            imageSrc={GambarHRHelpDesk}
+            title="HR Helpdesk"
+            text="Kelola pertanyaan karyawan"
+          />
+          {/* Fitur 8 */}
+          <FiturCard
+            imageSrc={GambarForms}
+            title="Forms"
+            text="Form online terintegrasi HRIS"
+          />
+          {/* Fitur 9 */}
+          <FiturCard
+            imageSrc={GambarPerformanceManagement}
+            title="Performance Management"
+            text="Penilaian kinerja karyawan"
+          />
+          {/* Fitur 10 */}
+          <FiturCard
+            imageSrc={GambarHRAnalytics}
+            title="HR Analytics"
+            text="Visualisasi insight HR"
           />
         </div>
+
+        {/* Card2 */}
+        <div
+          data-aos="fade-up"
+          className="card w-full shadow-xl rounded-xl p-5 my-20 bg-blue-100 flex flex-col md:flex-row items-center"
+        >
+          <div className="card-content md:flex-1">
+            <div className="flex flex-col md:flex-row items-center">
+              <img src={Gambar3} alt="Gambar3" className="md:mr-5" />
+              <div className="mx-0 md:mx-5">
+                <div className="card-title">
+                  <h2 className="text-lg md:text-5xl text-blue-900 font-bold">
+                    Aplikasi Meraih merupakan satu solusi untuk semua kebutuhan
+                    HR Anda
+                  </h2>
+                </div>
+                <p className="text-base md:text-lg text-gray-400 mt-5">
+                  Optimalkan pengelolaan operasi HR Anda dengan bantuan solusi
+                  terintegrasi dari Meraih.
+                </p>
+              </div>
+            </div>
+            <button className="flex gap-1 items-center border-2 border-primary rounded-3xl py-2 px-4 bg-primary text-white hover:bg-blue-900 hover:border-blue-900 duration-300 lg:gap-2 lg:text-xl lg:font-medium lg:py-3 lg:px-6 mt-4 md:mt-0 ml-auto">
+              <p>Hubungi Sales</p>
+              <FaAngleRight className="w-5 h-5 lg:w-6 lg:h-6" />
+            </button>
+          </div>
+        </div>
+
+        <Footer />
       </div>
     </>
   );
