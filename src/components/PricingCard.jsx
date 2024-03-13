@@ -18,8 +18,6 @@ const PricingCard = ({ imageSrc, title, text, features }) => {
         <div className="mt-5">
           <button
             className="border-2 rounded-3xl py-2 px-4 border-primary bg-white hover:bg-primary group duration-300 lg:py-3 lg:px-6"
-            data-aos="zoom-out"
-            data-aos-delay="200"
           >
             <a
               href="https://wa.me/6285346901814"
