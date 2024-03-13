@@ -1,9 +1,11 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import FiturCard from "../components/FiturCard";
 import { BsFillCheckCircleFill } from "react-icons/bs"; 
 import GambarFitur from "../assets/GambarFitur.png";
 import { ImWhatsapp } from "react-icons/im";
 import { FaAngleRight } from "react-icons/fa";
+
 
 const FiturPage = () => {
   const keunggulan = [
@@ -88,13 +90,37 @@ const FiturPage = () => {
         </div>
 
         {/* Fitur */}
-        <div className="text-center mt-20">
-          <div className="text-3xl md:text-5xl font-semibold mb-5 text-blue-900">
-            Pelajari dan Coba Fitur Terbaik dari HRIS Meraih
-          </div>
-
-          {/* Border Box */}
-          
+        <div className="flex flex-wrap justify-center mt-16">
+          <FiturCard
+            imageSrc={GambarHargaBasic}
+            title="Sistem HR Basic"
+            text="Sistem HR Praktis dengan Fitur Esensial untuk Meningkatkan Efisiensi dan Mengoptimalkan Proses SDM Anda"
+            features={[
+              "Get started with messaging",
+              "Flexible team meetings",
+              "5 TB cloud storage",
+            ]}
+          />
+          <FiturCard
+            imageSrc={GambarHargaPro}
+            title="Sistem HR Pro"
+            text="Sistem HR Tingkat Lanjut dengan Fitur Pendorong Produktivitas untuk Optimalisasi Operasional dan Kinerja Bisnis Anda"
+            features={[
+              "All features in Basic",
+              "Flexible call scheduling",
+              "15 TB cloud storage",
+            ]}
+          />
+          <FiturCard
+            imageSrc={GambarHargaMeraih460}
+            title="Sistem HR Meraih 460"
+            text="Solusi Terbaik untuk Bisnis dengan Kebutuhan Pengembangan Strategis dan Operasional yang Kompleks"
+            features={[
+              "All features in Startup",
+              "Growth oriented",
+              "Unlimited cloud storage",
+            ]}
+          />
         </div>
       </div>
     </>
