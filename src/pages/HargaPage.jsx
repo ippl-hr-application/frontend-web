@@ -57,10 +57,35 @@ const HargaPage = () => {
             </div>
 
             {/* Newpage */}
-            <div className="text-center">
-               <div className="text-2xl md:text-4xl font-semibold my-8 text-blue-900">
+            <div className="mx-4 flex flex-col justify-center items-center">
+               {/* heading */}
+               <div className="text-2xl md:text-4xl font-semibold my-8 text-blue-900 text-center lg:w-2/3">
                   Dirancang untuk Keseimbangan Fleksibilitas dan Transparansi yang
                   Optimal
+               </div>
+               {/* cards */}
+               <div className="flex flex-col gap-14 lg:w-2/3">
+                  {/* card 1 */}
+                  <div className="relative">
+                     <h2 className="absolute top-0 bg-cyan-400 rounded-2xl px-3 py-2 text-white text-base lg:text-xl">Kemudahan integrasi</h2>
+                     <div className="border-2 border-cyan-400 bg-transparent rounded-xl px-4 pt-14 pb-4">
+                        <p className="text-sm lg:text-lg">Terintegrasi langsung dengan sistem in-house, ERP, LMS, dan dilengkapi dengan API yang dapat disesuaikan</p>
+                     </div>
+                  </div>
+                  {/* card 2 */}
+                  <div className="relative">
+                     <h2 className="absolute top-0 right-0 bg-blue-500 rounded-2xl px-3 py-2 text-white text-base lg:text-xl">Platform Digital yang aman</h2>
+                     <div className="border-2 border-blue-500 bg-transparent rounded-xl px-4 pt-14 pb-4">
+                        <p className="text-sm lg:text-lg">Tanpa memerlukan instalasi perangkat lunak di setiap perangkat, serta tidak ada biaya tambahan yang dibutuhkan untuk pemeliharaan rutin seperti pembaruan atau perbaikan teknis</p>
+                     </div>
+                  </div>
+                  {/* card 3*/}
+                  <div className="relative">
+                     <h2 className="absolute top-0 bg-red-500 rounded-2xl px-3 py-2 text-white text-base lg:text-xl">Training ekstensif</h2>
+                     <div className="border-2 border-red-500 bg-transparent rounded-xl px-4 pt-14 pb-4">
+                        <p className="text-sm lg:text-lg">Platform yang mudah dipelajari dengan dokumentasi yang lengkap dan onboarding yang dapat disesuaikan dengan kebutuhan Anda</p>
+                     </div>
+                  </div>
                </div>
             </div>
 
@@ -95,3 +120,4 @@ const HargaPage = () => {
 };
 
 export default HargaPage;
+
