@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "../components/Navbar";
 import { FaAngleRight } from "react-icons/fa";
 import GambarAbout from "../assets/GambarAbout.png";

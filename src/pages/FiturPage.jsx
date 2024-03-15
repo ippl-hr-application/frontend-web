@@ -1,5 +1,5 @@
-import React from "react";
 import Navbar from "../components/Navbar";
+
 import FiturCard from "../components/FiturCard";
 import { BsFillCheckCircleFill } from "react-icons/bs"; 
 import GambarFitur from "../assets/GambarFitur.png";
@@ -20,8 +20,6 @@ import AOS from "aos";
 import "../../node_modules/aos/dist/aos.css";
 import Footer from "../components/Footer";
 import { useEffect} from "react";
-
-
 
 const FiturPage = () => {
   const keunggulan = [
@@ -58,8 +56,8 @@ const FiturPage = () => {
   return (
     <>
       <Navbar />
-      <div className="pt-[26px] container mx-auto">
-        <div className="relative bg-gradient-to-r from-blue-300 shadow-2xl mb-10 md:pt-10 lg:pt-4">
+      <div className="container mx-auto">
+        <div className="relative pt-10 bg-gradient-to-r from-blue-300 shadow-2xl ">
           <div className="text-center mt-12 md:mt-44">
             <div className="text-3xl md:text-5xl font-semibold mb-3 md:mb-5 text-blue-900">
               Nikmati pengalaman terbaik mengelola HR dan Bisnis Anda

@@ -46,7 +46,6 @@ const Footer = ({ linkRef, goto }) => {
       goto(linkRef.current);
    };
 
-
    return (
       <div className="container mx-auto">
          <div className="px-4 pt-7 bg-blue-100 bg-opacity-60 flex flex-col gap-6 lg:flex lg:flex-row lg:justify-center lg:items-end">

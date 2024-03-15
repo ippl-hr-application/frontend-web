@@ -1,12 +1,28 @@
 import { useEffect, useState } from "react";
 import LogoMeraih from "../assets/Logo Meraih.svg"
-import { NavLink, Link } from "react-router-dom"
+import { NavLink, Link, useNavigate } from "react-router-dom"
 import { FiMenu } from "react-icons/fi";
 import { RxCross2 } from "react-icons/rx";
+import { useDispatch, useSelector } from "react-redux";
+import { getMe } from "../redux/actions/authActions";
+import { RiAccountCircleFill } from "react-icons/ri";
 
 const Navbar = () => {
+   const dispatch = useDispatch();
+   const navigate = useNavigate();
+
    const [openHamburger, setOpenHamburger] = useState(false);
    const [navbar, setNavbar] = useState(false);
+
+   // ambil get me di redux
+   const { user, token } = useSelector((state) => state.auth);
+
+   // get me with redux
+   useEffect(() => {
+      if (token) {
+         dispatch(getMe(navigate, null, "/"));
+      }
+   }, [dispatch, navigate, token]);
 
    const handleHamburgerClick = (e) => {
       e.stopPropagation();
@@ -109,7 +125,9 @@ const Navbar = () => {
 
             <div className="hidden container mx-auto lg:flex justify-between">
                {/* Navmenu Website */}
+               {/* {!user ? ( */}
                <div className="hidden lg:flex lg:items-center lg:gap-14">
+                  {/* logo */}
                   <Link to={'/'} className="">
                      <img
                         src={LogoMeraih}
@@ -117,33 +135,47 @@ const Navbar = () => {
                         className="w-14 h-14 lg:w-20 lg:h-20"
                      />
                   </Link>
+                  {/* navmenu */}
                   <div className="hidden lg:flex lg:gap-32">
                      {Menus.map((item, index) => (
                         <NavLink
                            key={index}
                            to={item.link}
-                           className="text-lg hover:text-blue-700 hover:scale-105 duration-300 ease-in-out"
+                           // className="text-lg hover:text-blue-700 hover:scale-105 duration-300 ease-in-out"
+                           className={({ isActive }) =>
+                              isActive
+                                 ? "border-0 bg-blue-600 text-white py-1 px-4 rounded-3xl flex items-center"
+                                 : "text-lg hover:text-blue-700 hover:scale-105 duration-300 ease-in-out flex items-center"
+                           }
                         >
                            {item.name}
                         </NavLink>
                      ))}
                   </div>
                </div>
+               {/* ) : ( */}
+               <>
+                  {/* login dan coba gratis */}
+                  <div className="hidden lg:flex items-center gap-7">
+                     <NavLink
+                        type="button"
+                        className="cursor-pointer text-blue-700 hover:text-blue-800 font-medium text-lg"
+                        as={Link}
+                        to="/login">
+                        Sign In
+                     </NavLink>
+                     <div className="w-px h-8 bg-black"></div>
+                     <button className="border-none px-6 py-2 bg-blue-700 hover:bg-blue-800 duration-300 rounded-2xl text-white font-medium text-lg">
+                        Coba Gratis
+                     </button>
+                  </div>
+               </>
+               {/* )} */}
 
-               {/* login dan coba gratis */}
-               <div className="hidden lg:flex items-center gap-7">
-                  <NavLink
-                     type="button"
-                     className="cursor-pointer text-blue-700 hover:text-blue-800 font-medium text-lg"
-                     as={Link}
-                     to="/login">
-                     Sign In
-                  </NavLink>
-                  <div className="w-px h-8 bg-black"></div>
-                  <button className="border-none px-6 py-2 bg-blue-700 hover:bg-blue-800 duration-300 rounded-2xl text-white font-medium text-lg">
-                     Coba Gratis
-                  </button>
-               </div>
+
+
+               {/* <RiAccountCircleFill /> */}
+
             </div>
          </div>
       </nav>
