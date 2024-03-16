@@ -5,7 +5,7 @@ import Gambar3 from "../assets/Gambar3.png";
 import Footer from "../components/Footer";
 import AOS from "aos";
 import "../../node_modules/aos/dist/aos.css";
-import { useEffect} from "react";
+import { useEffect, useRef } from "react";
 
 const TentangPage = () => {
 
@@ -16,10 +16,21 @@ const TentangPage = () => {
     });
 
   }, []);
+
+  const linkRef = useRef(null);
+  // back to MainSection when on click logo Meraih in Footer 
+  const goto = (ref) => {
+    window.scrollTo({
+      top: ref.offsetTop,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       <Navbar />
-      <div className="container pt-20 md:pt-44 mx-auto">
+      <div className="container pt-20 md:pt-24 lg:pt-32 mx-auto" ref={linkRef}>
         <div data-aos="fade-up" className="text-center">
           <div className="text-3xl md:text-5xl font-semibold mb-5 text-blue-900">
             Tentang Kami
@@ -29,8 +40,8 @@ const TentangPage = () => {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row md:mt-28">
-          <div className="flex flex-col justify-center md:mr-40">
+        <div className="flex flex-col md:flex-row md:mt-28 lg:justify-between mx-4">
+          <div className="flex flex-col justify-center lg:w-1/2">
             <div
               data-aos="fade-up"
               className="text-3xl my-5 md:text-5xl font-semibold text-blue-900"
@@ -55,7 +66,7 @@ const TentangPage = () => {
           </div>
           <img
             data-aos="fade-left"
-            className="mt-2 md:mt-0"
+            className="mt-2 md:mt-0 md:w-1/2 lg:w-[600px]"
             src={GambarAbout}
             alt="GambarAbout"
           />
@@ -88,8 +99,11 @@ const TentangPage = () => {
           </div>
         </div>
 
-        <Footer />
       </div>
+      <Footer 
+        linkRef={linkRef}
+        goto={goto}
+      />
     </>
   );
 };
