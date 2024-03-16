@@ -36,11 +36,19 @@ function App() {
           />
           <Route
             path="/verify-email"
-            element={<LupaPassword />}
+            element={
+              <NoAccessToken>
+                <LupaPassword />
+              </NoAccessToken>
+            }
           />
           <Route
             path="/verify-sandi"
-            element={<UbahSandi />}
+            element={
+              <NoAccessToken>
+                <UbahSandi />
+              </NoAccessToken>
+            }
           />
           <Route
             path="/register"

@@ -64,8 +64,37 @@ export const getMe =
          }
       };
 
-
 export const logout = () => (dispatch) => {
    dispatch(setToken(null));
    dispatch(setUser(null));
+};
+
+export const register = (full_name, email, phone_number, company_name, industry, password, navigate) => async () => {
+   try {
+      const response = await axios.post(
+         `${api_url}/auth/register`,
+         {
+            full_name,
+            email,
+            phone_number,
+            company_name,
+            industry,
+            password
+         }
+      );
+
+      // Check for successful registration
+      if (response.status === 201) {
+         alert("Registration Successful !");
+         navigate("/login");
+      } else {
+         alert("Registration Failed!, Please try again!");
+      }
+   } catch (error) {
+      if (axios.isAxiosError(error)) {
+         alert(error?.response?.data?.message);
+         return;
+      }
+      alert(error?.message);
+   }
 };
