@@ -1,4 +1,3 @@
-import Navbar from "../components/Navbar"
 import GambarLogin from "../assets/GambarLogin.png"
 import { BsPerson } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
@@ -9,7 +8,7 @@ import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ButtonBackToHome from "../components/ButtonBackToHome";
-
+import LogoMeraih from "../assets/Logo Meraih.svg"
 import { useDispatch } from "react-redux";
 import { login } from "../redux/actions/authActions";
 import { useNavigate } from "react-router-dom";
@@ -77,8 +76,18 @@ const LoginPage = () => {
    return (
       <>
          <div>
-            <Navbar />
-            <div className="w-full pt-16 lg:pt-24">
+            <nav className="mx-4 mt-2 flex items-center justify-between">
+               <Link to={'/'}>
+                  <img src={LogoMeraih} alt="LogoMeraih" className="w-20 p-2" />
+               </Link>
+               <Link
+                  to={'/register'}
+                  className="border-none bg-primary text-white py-2 px-4 rounded-2xl font-semibold text-base lg:text-lg lg:py-3 lg:px-10 lg:rounded-3xl lg:hover:bg-blue-900 duration-300"
+               >
+                  <button>Sing Up</button>
+               </Link>
+            </nav>
+            <div className="w-full">
                <div className="px-4 py-4 lg:flex mt-2">
                   {/* button back to HomePage mode mobile*/}
                   <div className="flex lg:hidden">
