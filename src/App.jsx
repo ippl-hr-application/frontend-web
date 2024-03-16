@@ -7,6 +7,7 @@ import HargaPage from "./pages/HargaPage"
 import LupaPassword from "./pages/LupaPassword"
 import RegisterPage from "./pages/RegisterPage"
 import UbahSandi from "./pages/UbahSandi"
+import NotFoundPage from "./pages/NotFoundPage"
 
 import NoAccessToken from "./security/NoAccessToken"
 // import Protected from "./security/Protected"
@@ -61,6 +62,8 @@ function App() {
             path="/harga"
             element={<HargaPage />}
           />
+
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
     </>

@@ -183,7 +183,6 @@ const Navbar = () => {
                         <NavLink
                            key={index}
                            to={item.link}
-                           // className="text-lg hover:text-blue-700 hover:scale-105 duration-300 ease-in-out"
                            className={({ isActive }) =>
                               isActive
                                  ? "border-0 bg-blue-600 text-white py-1 px-4 rounded-3xl flex items-center"
@@ -255,7 +254,6 @@ const Navbar = () => {
                      </button>
                   </div>
                </>
-
             </div>
          </div>
       </nav >

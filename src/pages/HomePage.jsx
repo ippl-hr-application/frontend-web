@@ -44,7 +44,7 @@ const HomePage = () => {
    }, [])
 
    const linkRef = useRef(null);
-   // back to MainSection when on click text MovieList in Footer from homepage
+   // back to MainSection when on click logo Meraih in Footer 
    const goto = (ref) => {
       window.scrollTo({
          top: ref.offsetTop,

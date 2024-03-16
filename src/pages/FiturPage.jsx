@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 
 import FiturCard from "../components/FiturCard";
-import { BsFillCheckCircleFill } from "react-icons/bs"; 
+import { BsFillCheckCircleFill } from "react-icons/bs";
 import GambarFitur from "../assets/GambarFitur.png";
 import { ImWhatsapp } from "react-icons/im";
 import { FaAngleRight } from "react-icons/fa";
@@ -19,7 +19,7 @@ import Gambar3 from "../assets/Gambar3.png";
 import AOS from "aos";
 import "../../node_modules/aos/dist/aos.css";
 import Footer from "../components/Footer";
-import { useEffect} from "react";
+import { useEffect, useRef } from "react";
 
 const FiturPage = () => {
   const keunggulan = [
@@ -53,10 +53,20 @@ const FiturPage = () => {
     });
   }, []);
 
+  const linkRef = useRef(null);
+  // back to MainSection when on click logo Meraih in Footer 
+  const goto = (ref) => {
+    window.scrollTo({
+      top: ref.offsetTop,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       <Navbar />
-      <div className="container mx-auto">
+      <div className="container mx-auto" ref={linkRef}>
         <div className="relative pt-10 bg-gradient-to-r from-blue-300 shadow-2xl ">
           <div className="text-center mt-12 md:mt-44">
             <div className="text-3xl md:text-5xl font-semibold mb-3 md:mb-5 text-blue-900">
@@ -210,8 +220,11 @@ const FiturPage = () => {
           </div>
         </div>
 
-        <Footer />
       </div>
+      <Footer 
+        linkRef={linkRef}
+        goto={goto}
+      />
     </>
   );
 };

@@ -6,14 +6,26 @@ import GambarHargaMeraih460 from "../assets/GambarHargaMeraih460.svg";
 import Gambar3 from "../assets/Gambar3.png";
 import { FaAngleRight } from "react-icons/fa";
 import Footer from "../components/Footer";
+import { useRef } from "react";
 
 const HargaPage = () => {
+
+   const linkRef = useRef(null);
+   // back to MainSection when on click logo Meraih in Footer 
+   const goto = (ref) => {
+      window.scrollTo({
+         top: ref.offsetTop,
+         left: 0,
+         behavior: "smooth",
+      });
+   };
+
    return (
       <>
          <Navbar />
-         <div className="container pt-20 md:pt-44 mx-auto">
-            <div className="text-center">
-               <div className="text-2xl md:text-4xl font-semibold mb-5 text-blue-900">
+         <div className="container pt-20 md:pt-28 lg:pt-36 mx-auto" ref={linkRef}>
+            <div className="text-center flex flex-col justify-center items-center">
+               <div className="text-2xl md:text-4xl font-semibold mb-5 text-blue-900 lg:w-2/3">
                   Satu Solusi HR untuk Memenuhi Kebutuhan Operasional dan Strategis
                   Bisnis Anda dengan Sempurna
                </div>
@@ -113,8 +125,11 @@ const HargaPage = () => {
                   </button>
                </div>
             </div>
-            <Footer />
          </div>
+         <Footer 
+            linkRef={linkRef}
+            goto={goto}
+         />
       </>
    );
 };

@@ -26,7 +26,7 @@ const Footer = ({ linkRef, goto }) => {
          );
 
          // Tentukan batasan scroll di mana button harus muncul
-         const threshold = documentHeight - windowHeight - 2300;
+         const threshold = documentHeight - windowHeight - 2000;
 
          // Tampilkan atau sembunyikan button berdasarkan batasan scroll
          setShowScrollToTop(scrollY > threshold);
@@ -42,7 +42,6 @@ const Footer = ({ linkRef, goto }) => {
    }, []);
 
    const handleScrollToTop = () => {
-      // Menggunakan ref dari Navbar untuk kembali ke atas
       goto(linkRef.current);
    };
 
