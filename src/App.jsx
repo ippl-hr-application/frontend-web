@@ -8,6 +8,9 @@ import LupaPassword from "./pages/LupaPassword"
 import RegisterPage from "./pages/RegisterPage"
 import UbahSandi from "./pages/UbahSandi"
 
+import NoAccessToken from "./security/NoAccessToken"
+// import Protected from "./security/Protected"
+
 function App() {
 
   return (
@@ -16,35 +19,47 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<HomePage />}
+            element={
+              // <Protected>
+              <HomePage />
+              // </Protected>
+            }
           />
           <Route
             path="/login"
-            element={<LoginPage />}
+            element={
+              <NoAccessToken>
+                <LoginPage />
+              </NoAccessToken>
+            }
           />
           <Route
             path="/verify-email"
-            element={<LupaPassword/>}
+            element={<LupaPassword />}
           />
           <Route
             path="/verify-sandi"
-            element={<UbahSandi/>}
+            element={<UbahSandi />}
           />
           <Route
             path="/register"
-            element={<RegisterPage/>}
+            element={
+              <NoAccessToken>
+                <RegisterPage />
+              </NoAccessToken>
+            }
           />
-          <Route 
+          <Route
             path="/fitur"
-            element={<FiturPage/>}
+            element={<FiturPage />}
           />
-          <Route 
+          <Route
             path="/tentang"
-            element={<TentangPage/>}
+            element={<TentangPage />}
           />
           <Route
             path="/harga"
-            element={<HargaPage/>}
+            element={<HargaPage />}
           />
         </Routes>
       </Router>

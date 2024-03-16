@@ -12,7 +12,7 @@ export const login = (email, password, navigate) => async (dispatch) => {
          email,
          password,
       });
-      const data = respons.data;
+      const { data } = respons.data;
       const { token } = data;
 
       // save token
@@ -45,7 +45,7 @@ export const getMe =
                   Authorization: `Bearer ${token}`,
                },
             });
-            const data = response.data;
+            const { data } = response.data;
 
             dispatch(setUser(data));
             if (navigatePathSuccess) navigate(navigatePathSuccess);
