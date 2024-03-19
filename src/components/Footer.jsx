@@ -8,6 +8,7 @@ import logoMeraih from "../assets/Logo Meraih.svg"
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { IoArrowUp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const Footer = ({ linkRef, goto }) => {
 
@@ -26,7 +27,7 @@ const Footer = ({ linkRef, goto }) => {
          );
 
          // Tentukan batasan scroll di mana button harus muncul
-         const threshold = documentHeight - windowHeight - 2300;
+         const threshold = documentHeight - windowHeight - 2000;
 
          // Tampilkan atau sembunyikan button berdasarkan batasan scroll
          setShowScrollToTop(scrollY > threshold);
@@ -42,10 +43,8 @@ const Footer = ({ linkRef, goto }) => {
    }, []);
 
    const handleScrollToTop = () => {
-      // Menggunakan ref dari Navbar untuk kembali ke atas
       goto(linkRef.current);
    };
-
 
    return (
       <div className="container mx-auto">
@@ -68,9 +67,9 @@ const Footer = ({ linkRef, goto }) => {
             <div className="flex flex-col gap-8">
                {/* menu footer */}
                <ul className="flex flex-row gap-4 lg:gap-8">
-                  <li className=" hover:text-blue-700 cursor-pointer lg:text-lg">Fitur</li>
-                  <li className=" hover:text-blue-700 cursor-pointer lg:text-lg">Layanan</li>
-                  <li className=" hover:text-blue-700 cursor-pointer lg:text-lg">Bantuan</li>
+                  <Link to={"/fitur"} className=" hover:text-blue-700 cursor-pointer lg:text-lg">Fitur</Link>
+                  <Link to={"/layanan"} className=" hover:text-blue-700 cursor-pointer lg:text-lg">Layanan</Link>
+                  <Link to={"/bantuan"} className=" hover:text-blue-700 cursor-pointer lg:text-lg">Bantuan</Link>
                </ul>
                <div className="h-px w-full bg-slate-600 lg:mb-4"></div>
                {/* hubungi kami */}

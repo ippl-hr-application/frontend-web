@@ -7,6 +7,10 @@ import HargaPage from "./pages/HargaPage"
 import LupaPassword from "./pages/LupaPassword"
 import RegisterPage from "./pages/RegisterPage"
 import UbahSandi from "./pages/UbahSandi"
+import NotFoundPage from "./pages/NotFoundPage"
+
+import NoAccessToken from "./security/NoAccessToken"
+// import Protected from "./security/Protected"
 import Dashboard from "./pages/Dashboard"
 
 function App() {
@@ -17,36 +21,58 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<HomePage />}
+            element={
+              // <Protected>
+              <HomePage />
+              // </Protected>
+            }
           />
           <Route
             path="/login"
-            element={<LoginPage />}
+            element={
+              <NoAccessToken>
+                <LoginPage />
+              </NoAccessToken>
+            }
           />
           <Route
             path="/verify-email"
-            element={<LupaPassword/>}
+            element={
+              <NoAccessToken>
+                <LupaPassword />
+              </NoAccessToken>
+            }
           />
           <Route
             path="/verify-sandi"
-            element={<UbahSandi/>}
+            element={
+              <NoAccessToken>
+                <UbahSandi />
+              </NoAccessToken>
+            }
           />
           <Route
             path="/register"
-            element={<RegisterPage/>}
+            element={
+              <NoAccessToken>
+                <RegisterPage />
+              </NoAccessToken>
+            }
           />
-          <Route 
+          <Route
             path="/fitur"
-            element={<FiturPage/>}
+            element={<FiturPage />}
           />
-          <Route 
+          <Route
             path="/tentang"
-            element={<TentangPage/>}
+            element={<TentangPage />}
           />
           <Route
             path="/harga"
-            element={<HargaPage/>}
+            element={<HargaPage />}
           />
+
+          <Route path="*" element={<NotFoundPage />} />
           <Route
             path="/dashboard"
             element={<Dashboard/>}
