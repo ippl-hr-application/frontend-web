@@ -8,6 +8,7 @@ import LupaPassword from "./pages/LupaPassword"
 import RegisterPage from "./pages/RegisterPage"
 import UbahSandi from "./pages/UbahSandi"
 import Dashboard from "./pages/Dashboard"
+import Dokumen from "./pages/Dokumen"
 
 function App() {
 
@@ -50,6 +51,10 @@ function App() {
           <Route
             path="/dashboard"
             element={<Dashboard/>}
+          />
+          <Route
+            path="/dokumen"
+            element={<Dokumen/>}
           />
         </Routes>
       </Router>
