@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import { Datepicker } from "flowbite-react";
 import { Tabs } from "flowbite-react";
+import { Dropdown } from "flowbite-react";
 
 function Dashboard() {
   return (
@@ -30,7 +31,7 @@ function Dashboard() {
 
                   <button className="border-2 rounded-full py-1 px-3 border-primary bg-white hover:bg-primary group duration-300 lg:py-2 lg:px-4">
                     <a
-                      href="https://wa.me/6285346901814"
+                      href=""
                       target="_blank"
                       className="flex items-center gap-1 text-primary group-hover:text-white lg:gap-2 lg:text-lg lg:font-medium"
                     >
@@ -40,7 +41,7 @@ function Dashboard() {
 
                   <button className="border-2 rounded-full py-1 px-3 border-primary bg-white hover:bg-primary group duration-300 lg:py-2 lg:px-4">
                     <a
-                      href="https://wa.me/6285346901814"
+                      href=""
                       target="_blank"
                       className="flex items-center gap-1 text-primary group-hover:text-white lg:gap-2 lg:text-lg lg:font-medium"
                     >
@@ -211,20 +212,19 @@ function Dashboard() {
           </div>
           <div>
             <div className="stats border w-[920px] h-[260px]">
-              <Tabs aria-label="Tabs with underline" style="underline">
-                <Tabs.Item active title="Announcement">
+              <Tabs aria-label="Tabs with underline" style="underline" className="sticky top-0 bg-white focus:ring-0">
+                <Tabs.Item active title="Announcement" className="focus:ring-0">
                   <div className="flex gap-5">
-                    <label className="input input-bordered flex items-center gap-2 w-[300px] h-[60px] ml-3">
+                    <div className="border flex rounded-lg ml-3 justify-center w-[300px]">
+                      <Dropdown label="Filter" inline>
+                        <Dropdown.Item>All Category</Dropdown.Item>
+                        <Dropdown.Item>Uncategorized</Dropdown.Item>
+                      </Dropdown>
+                    </div>
+                    <label className="input input-bordered flex items-center gap-2 w-[570px] h-[60px]">
                       <input
                         type="text"
-                        className="grow"
-                        placeholder="Filter"
-                      />
-                    </label>
-                    <label className="input input-bordered flex items-center gap-2 w-[500px] h-[60px]">
-                      <input
-                        type="text"
-                        className="grow"
+                        className="grow focus:ring-0 border-none"
                         placeholder="Search"
                       />
                       <svg
@@ -242,9 +242,14 @@ function Dashboard() {
                     </label>
                   </div>
 
-                  <div className="stat bg-gray-100 justify-between items-center rounded-lg mt-3 w-[895px] h-[50px] ml-3">
+                  <div className="stat bg-gray-100 justify-between items-center rounded-lg mt-3 w-[890px] h-[50px] ml-3">
                     <h2 className="stat-title text-gray-500">
                       Apa yang ingin Anda umumkan?
+                    </h2>
+                  </div>
+                  <div className="stat bg-gray-100 justify-between items-center rounded-lg mt-3 w-[890px] h-[70px] ml-3">
+                    <h2 className="stat-title text-gray-500">
+                      Tidak ada pengumuman yang ditampilkan
                     </h2>
                   </div>
                 </Tabs.Item>
