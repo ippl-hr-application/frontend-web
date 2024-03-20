@@ -9,8 +9,12 @@ import RegisterPage from "./pages/RegisterPage"
 import UbahSandi from "./pages/UbahSandi"
 import NotFoundPage from "./pages/NotFoundPage"
 
+import Employees from "./pages/ManajemenAkunKaryawan/Employees"
+import AddEmployees from "./pages/ManajemenAkunKaryawan/AddEmployees"
+import DetailEmployee from "./pages/ManajemenAkunKaryawan/DetailEmployee"
+
 import NoAccessToken from "./security/NoAccessToken"
-// import Protected from "./security/Protected"
+import Protected from "./security/Protected"
 import Dashboard from "./pages/Dashboard"
 
 function App() {
@@ -22,9 +26,7 @@ function App() {
           <Route
             path="/"
             element={
-              // <Protected>
               <HomePage />
-              // </Protected>
             }
           />
           <Route
@@ -72,11 +74,41 @@ function App() {
             element={<HargaPage />}
           />
 
-          <Route path="*" element={<NotFoundPage />} />
           <Route
             path="/dashboard"
-            element={<Dashboard/>}
+            element={
+              <Protected>
+                <Dashboard />
+              </Protected>
+            }
           />
+
+          <Route
+            path="/employees"
+            element={
+              <Protected>
+                <Employees />
+              </Protected>
+            }
+          />
+          <Route
+            path="/add_employees"
+            element={
+              <Protected>
+                <AddEmployees />
+              </Protected>
+            }
+          />
+          <Route
+            path="/detail_employees"
+            element={
+              <Protected>
+                <DetailEmployee />
+              </Protected>
+            }
+          />
+
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
     </>
