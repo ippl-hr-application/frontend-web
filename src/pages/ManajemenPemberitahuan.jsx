@@ -1,12 +1,12 @@
 import React from 'react'
 import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
+import { Dropdown } from "flowbite-react";
 import { useState } from "react";
 import AddAttachment from "../assets/AddAttachment.png";
 
 function ManajemenPemberitahuan() {
   const [openModal, setOpenModal] = useState(false);
   const [email, setEmail] = useState("");
-
 
   return (
     <>
@@ -33,7 +33,8 @@ function ManajemenPemberitahuan() {
               </div>
               <TextInput id="category" placeholder="Optional" required />
             </div>
-            {/* label */}
+            
+            {/* label 3*/}
             <div>
               <div className="mb-2 block">
                 <Label htmlFor="content" value="Content" />
