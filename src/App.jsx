@@ -9,6 +9,7 @@ import RegisterPage from "./pages/RegisterPage"
 import UbahSandi from "./pages/UbahSandi"
 import NotFoundPage from "./pages/NotFoundPage"
 import ManajemenPemberitahuan from "./pages/ManajemenPemberitahuan"
+import ManajemenJadwal from "./pages/ManajemenJadwal"
 
 import NoAccessToken from "./security/NoAccessToken"
 // import Protected from "./security/Protected"
@@ -67,6 +68,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/manajemenpemberitahuan" element={<ManajemenPemberitahuan />} />
+          <Route path="/manajemenjadwal" element={<ManajemenJadwal />} />
         </Routes>
       </Router>
     </>

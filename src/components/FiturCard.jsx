@@ -1,5 +1,3 @@
-
-
 const FiturCard = ({ imageSrc, title, text }) => {
    return (
       <div className="w-full md:w-80 bg-white rounded-xl shadow-xl p-6 mx-4 mb-8 transform transition duration-300 hover:scale-105">
@@ -20,3 +18,9 @@ const FiturCard = ({ imageSrc, title, text }) => {
 };
 
 export default FiturCard;
+
+FiturCard.propTypes = {
+  imageSrc: PropTypes.string,
+  title: PropTypes.string,
+  text: PropTypes.string,
+};
