@@ -1,13 +1,14 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import LoginPage from "./pages/LoginPage"
-import HomePage from "./pages/HomePage"
-import FiturPage from "./pages/FiturPage"
-import TentangPage from "./pages/TentangPage"
-import HargaPage from "./pages/HargaPage"
-import LupaPassword from "./pages/LupaPassword"
-import RegisterPage from "./pages/RegisterPage"
-import UbahSandi from "./pages/UbahSandi"
-import NotFoundPage from "./pages/NotFoundPage"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import HomePage from "./pages/HomePage";
+import FiturPage from "./pages/FiturPage";
+import TentangPage from "./pages/TentangPage";
+import HargaPage from "./pages/HargaPage";
+import LupaPassword from "./pages/LupaPassword";
+import RegisterPage from "./pages/RegisterPage";
+import UbahSandi from "./pages/UbahSandi";
+import NotFoundPage from "./pages/NotFoundPage";
+import Task from "./pages/Task";
 
 import Employees from "./pages/ManajemenAkunKaryawan/Employees"
 import AddEmployees from "./pages/ManajemenAkunKaryawan/AddEmployees"
@@ -18,7 +19,6 @@ import Protected from "./security/Protected"
 import Dashboard from "./pages/Dashboard"
 
 function App() {
-
   return (
     <>
       <Router>
@@ -61,18 +61,9 @@ function App() {
               </NoAccessToken>
             }
           />
-          <Route
-            path="/fitur"
-            element={<FiturPage />}
-          />
-          <Route
-            path="/tentang"
-            element={<TentangPage />}
-          />
-          <Route
-            path="/harga"
-            element={<HargaPage />}
-          />
+          <Route path="/fitur" element={<FiturPage />} />
+          <Route path="/tentang" element={<TentangPage />} />
+          <Route path="/harga" element={<HargaPage />} />
 
           <Route
             path="/dashboard"
@@ -82,6 +73,15 @@ function App() {
               </Protected>
             }
           />
+          <Route
+            path="/task"
+            element={
+              <Protected>
+                <Task />
+              </Protected>
+            }
+          />
+
 
           <Route
             path="/employees"
@@ -112,7 +112,7 @@ function App() {
         </Routes>
       </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
