@@ -11,6 +11,7 @@ import NotFoundPage from "./pages/NotFoundPage"
 
 import NoAccessToken from "./security/NoAccessToken"
 // import Protected from "./security/Protected"
+import Dashboard from "./pages/Dashboard"
 
 function App() {
 
@@ -72,6 +73,10 @@ function App() {
           />
 
           <Route path="*" element={<NotFoundPage />} />
+          <Route
+            path="/dashboard"
+            element={<Dashboard/>}
+          />
         </Routes>
       </Router>
     </>
