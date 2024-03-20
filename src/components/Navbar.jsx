@@ -90,6 +90,35 @@ const Navbar = () => {
 
             {/* Navmenu Mobile */}
             <div className="flex lg:hidden">
+               {/* menu layanan admin */}
+               <div className="flex-none">
+                  <ul className="menu menu-horizontal px-1">
+                     <li>
+                        <details>
+                           <summary className="text-lg">
+                              Layanan
+                           </summary>
+                           <ul className="p-2 bg-base-100 rounded-t-none">
+                              <Link as={Link} to={"/employees"}>
+                                 <li><a>Employees</a></li>
+                              </Link>
+                              <Link as={Link} to={"/dashboard"}>
+                                 <li><a>Dashboard</a></li>
+                              </Link>
+                              <Link as={Link} to={"/"}>
+                                 <li><a>Dokumen</a></li>
+                              </Link>
+                              <Link as={Link} to={"/"}>
+                                 <li><a>Jadwal</a></li>
+                              </Link>
+                              <Link as={Link} to={"/task"}>
+                                 <li><a>Task</a></li>
+                              </Link>
+                           </ul>
+                        </details>
+                     </li>
+                  </ul>
+               </div>
                {/* Navmenu */}
                <button
                   className="text-blue-700"
@@ -178,7 +207,7 @@ const Navbar = () => {
                      />
                   </Link>
                   {/* navmenu */}
-                  <div className="hidden lg:flex lg:gap-32">
+                  <div className="hidden lg:flex lg:gap-24">
                      {Menus.map((item, index) => (
                         <NavLink
                            key={index}
@@ -192,6 +221,35 @@ const Navbar = () => {
                            {item.name}
                         </NavLink>
                      ))}
+                  </div>
+                  {/* menu layanan admin */}
+                  <div className="flex-none">
+                     <ul className="menu menu-horizontal px-1">
+                        <li>
+                           <details>
+                              <summary className="text-lg">
+                                 Layanan
+                              </summary>
+                              <ul className="p-2 bg-base-100 rounded-t-none">
+                                 <Link as={Link} to={"/employees"}>
+                                    <li><a>Employees</a></li>
+                                 </Link>
+                                 <Link as={Link} to={"/dashboard"}>
+                                    <li><a>Dashboard</a></li>
+                                 </Link>
+                                 <Link as={Link} to={"/"}>
+                                    <li><a>Dokumen</a></li>
+                                 </Link>
+                                 <Link as={Link} to={"/"}>
+                                    <li><a>Jadwal</a></li>
+                                 </Link>
+                                 <Link as={Link} to={"/task"}>
+                                    <li><a>Task</a></li>
+                                 </Link>
+                              </ul>
+                           </details>
+                        </li>
+                     </ul>
                   </div>
                </div>
                <>
