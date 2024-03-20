@@ -8,6 +8,7 @@ import LupaPassword from "./pages/LupaPassword"
 import RegisterPage from "./pages/RegisterPage"
 import UbahSandi from "./pages/UbahSandi"
 import NotFoundPage from "./pages/NotFoundPage"
+import ManajemenPemberitahuan from "./pages/ManajemenPemberitahuan"
 
 import NoAccessToken from "./security/NoAccessToken"
 // import Protected from "./security/Protected"
@@ -59,28 +60,17 @@ function App() {
               </NoAccessToken>
             }
           />
-          <Route
-            path="/fitur"
-            element={<FiturPage />}
-          />
-          <Route
-            path="/tentang"
-            element={<TentangPage />}
-          />
-          <Route
-            path="/harga"
-            element={<HargaPage />}
-          />
+          <Route path="/fitur" element={<FiturPage />} />
+          <Route path="/tentang" element={<TentangPage />} />
+          <Route path="/harga" element={<HargaPage />} />
 
           <Route path="*" element={<NotFoundPage />} />
-          <Route
-            path="/dashboard"
-            element={<Dashboard/>}
-          />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/manajemenpemberitahuan" element={<ManajemenPemberitahuan />} />
         </Routes>
       </Router>
     </>
-  )
+  );
 }
 
 export default App
