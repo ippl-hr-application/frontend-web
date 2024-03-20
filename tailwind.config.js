@@ -19,8 +19,13 @@ export default {
       },
     },
   },
-  plugins: [require("daisyui"), require('flowbite/plugin')], 
+  plugins: [
+    require("daisyui"),
+  ],
 
+  pluginss: [
+    require('flowbite/plugin')
+  ],
   // daisyUI config (optional - here are the default values)
   daisyui: {
     themes: false, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]

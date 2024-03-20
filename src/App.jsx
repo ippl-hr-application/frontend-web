@@ -10,9 +10,13 @@ import UbahSandi from "./pages/UbahSandi";
 import NotFoundPage from "./pages/NotFoundPage";
 import Task from "./pages/Task";
 
-import NoAccessToken from "./security/NoAccessToken";
-// import Protected from "./security/Protected"
-import Dashboard from "./pages/Dashboard";
+import Employees from "./pages/ManajemenAkunKaryawan/Employees"
+import AddEmployees from "./pages/ManajemenAkunKaryawan/AddEmployees"
+import DetailEmployee from "./pages/ManajemenAkunKaryawan/DetailEmployee"
+
+import NoAccessToken from "./security/NoAccessToken"
+import Protected from "./security/Protected"
+import Dashboard from "./pages/Dashboard"
 
 function App() {
   return (
@@ -22,9 +26,7 @@ function App() {
           <Route
             path="/"
             element={
-              // <Protected>
               <HomePage />
-              // </Protected>
             }
           />
           <Route
@@ -63,9 +65,49 @@ function App() {
           <Route path="/tentang" element={<TentangPage />} />
           <Route path="/harga" element={<HargaPage />} />
 
+          <Route
+            path="/dashboard"
+            element={
+              <Protected>
+                <Dashboard />
+              </Protected>
+            }
+          />
+          <Route
+            path="/task"
+            element={
+              <Protected>
+                <Task />
+              </Protected>
+            }
+          />
+
+          <Route
+            path="/employees"
+            element={
+              <Protected>
+                <Employees />
+              </Protected>
+            }
+          />
+          <Route
+            path="/add_employees"
+            element={
+              <Protected>
+                <AddEmployees />
+              </Protected>
+            }
+          />
+          <Route
+            path="/detail_employees"
+            element={
+              <Protected>
+                <DetailEmployee />
+              </Protected>
+            }
+          />
+
           <Route path="*" element={<NotFoundPage />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/task" element={<Task />} />
         </Routes>
       </Router>
     </>
