@@ -1,4 +1,4 @@
-import Navbar from "../../components/Navbar"
+import Navbar from "../../components/Navbar";
 import CopyRight2 from "../../components/CopyRight2";
 import iconBintang from "../../assets/iconBintang.svg"
 import { FaChevronDown } from "react-icons/fa";
@@ -8,7 +8,7 @@ import { AiOutlineCaretDown } from "react-icons/ai";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Employees = () => {
+const EmployeesPage = () => {
    const [selectAll, setSelectAll] = useState(false);
    const [checkboxes, setCheckboxes] = useState(Array(4).fill(false)); // Ganti 4 dengan jumlah baris tabel Anda
 
@@ -255,4 +255,4 @@ const Employees = () => {
    )
 }
 
-export default Employees
+export default EmployeesPage;
