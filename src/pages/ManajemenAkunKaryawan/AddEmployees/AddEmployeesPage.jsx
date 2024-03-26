@@ -1,6 +1,7 @@
-import Navbar from "../../../components/Navbar"
-import CopyRight2 from "../../../components/CopyRight2"
-import "../../ManajemenAkunKaryawan/stepper.css"
+import Navbar from "../../../components/Navbar";
+import CopyRight2 from "../../../components/CopyRight2";
+
+import "../../ManajemenAkunKaryawan/stepper.css";
 import { useState } from "react";
 import { FaCheck } from "react-icons/fa6";
 import { IoMdArrowRoundBack } from "react-icons/io";
@@ -11,21 +12,23 @@ import EmploymentDataComponent from "../../../components/ManajemenAkunKaryawan/E
 import PayrollComponent from "../../../components/ManajemenAkunKaryawan/PayrollComponent";
 import InviteEmployeeComponent from "../../../components/ManajemenAkunKaryawan/InviteEmployeeComponent";
 
-// import { useNavigate } from "react-router-dom";
-
 const AddEmployeesPage = () => {
-   // const navigate = useNavigate();
    const steps = ["Personal Data", "Employment Data", "Payroll", "Invite Employee"];
-   const [currentStep, setCurrentStep] = useState(1);
    const [complete, setComplete] = useState(false);
 
-   const handleNext = () => {
-      if (currentStep === steps.length) {
+   // fungsi untuk multistep form datanya
+   const [step, setStep] = useState(1);
+
+   const nextStep = () => {
+      setStep(step + 1);
+      if (step === 4) {
          setComplete(true);
-      } else {
-         setCurrentStep((prev) => prev + 1);
-         // navigate("/add_employees_2");
       }
+   };
+
+   const previousStep = () => {
+      setStep(step - 1);
+      setComplete(false);
    };
 
    return (
@@ -45,57 +48,56 @@ const AddEmployeesPage = () => {
             </Link>
             {/* step progress bar */}
             <div className="flex gap-4 justify-center mt-14">
-               {steps.map((step, i) => (
+               {steps.map((label, index) => (
                   <div
-                     key={i}
+                     key={index}
                      className={`step-item 
-                        ${currentStep === i + 1 && "active"} 
-                        ${(i + 1 < currentStep || complete) && "complete"}`
+                        ${step === index + 1 ? "active" : ""} 
+                        ${complete || index + 1 < step ? "complete" : ""}`
                      }
                   >
                      <div className="step ">
-                        {i + 1 < currentStep || complete ? <FaCheck size={20} /> : i + 1}
+                        {complete || index + 1 < step ? <FaCheck size={20} /> : index + 1}
                      </div>
-                     <p className="text-slate-300">{step}</p>
+                     <p className="text-slate-300">{label}</p>
                   </div>
                ))}
             </div>
 
             {/* Card form PERSONAL DATA*/}
-            <div className="hidden">
-               <PersonalDataComponent />
-            </div>
+            {step === 1 && (
+               <PersonalDataComponent
+                  onNext={nextStep}
+               />
+            )}
 
             {/* Card from Employment Data */}
-            <div className="hidden">
-               <EmploymentDataComponent />
-            </div>
+            {step === 2 && (
+               <EmploymentDataComponent
+                  onPrevious={previousStep}
+                  onNext={nextStep}
+               />
+            )}
 
             {/* Card from Payroll */}
-            <div className="hidden">
-               <PayrollComponent />
-            </div>
+            {step === 3 && (
+               <PayrollComponent
+                  onPrevious={previousStep}
+                  onNext={nextStep}
+               />
+            )}
 
             {/* finish */}
-            <InviteEmployeeComponent />
+            {step === 4 && (
+               <InviteEmployeeComponent
+                  onPrevious={previousStep}
+               />
+            )}
          </div>
-         {/* {!complete && (
-            <button
-               className="text-white rounded-xl py-2 px-4 bg-primary"
-               // onClick={() => {
-               //    currentStep === steps.length
-               //       ? setComplete(true)
-               //       : setCurrentStep((prev) => prev + 1);
-               // }}
-               onClick={handleNext}
-            >
-               {currentStep === steps.length ? "Finish" : "Next"}
-            </button>
-         )} */}
 
          <CopyRight2 />
       </div>
-   )
-}
+   );
+};
 
 export default AddEmployeesPage;

@@ -1,7 +1,14 @@
 import { Datepicker } from "flowbite-react";
 import { Checkbox, Label } from "flowbite-react";
+import PropTypes from "prop-types"
 
-const PersonalDataComponent = () => {
+const PersonalDataComponent = ({ onNext }) => {
+   const handleSubmit = (e) => {
+      e.preventDefault();
+      // Validasi dan simpan data personal
+      onNext();
+   };
+
    return (
       <div className="mx-4 mt-4 flex justify-center items-center">
          {/* form data */}
@@ -12,7 +19,7 @@ const PersonalDataComponent = () => {
                <p className="font-light text-base text-slate-400">Fill all employee personal basic information data</p>
             </div>
 
-            <form action="" className="flex flex-col gap-4">
+            <form action="" onSubmit={handleSubmit} className="flex flex-col gap-4">
                {/* name */}
                <div className="flex gap-4 flex-row justify-between">
                   {/* first name */}
@@ -229,8 +236,8 @@ const PersonalDataComponent = () => {
 
                {/* button cancel/next */}
                <div className="flex gap-6 justify-end items-center mt-4">
-                  <button>Cancel</button>
-                  <button className="bg-slate-200 py-3 px-8 rounded-md">Next</button>
+                  <button type="button">Cancel</button>
+                  <button type="submit" className="bg-slate-200 py-3 px-8 rounded-md">Next</button>
                </div>
             </form>
          </div>
@@ -238,4 +245,8 @@ const PersonalDataComponent = () => {
    )
 }
 
-export default PersonalDataComponent
+export default PersonalDataComponent;
+
+PersonalDataComponent.propTypes = {
+   onNext: PropTypes.func
+}

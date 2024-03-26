@@ -1,4 +1,12 @@
-const PayrollComponent = () => {
+import PropTypes from "prop-types"
+
+const PayrollComponent = ({ onPrevious, onNext }) => {
+   const handleSubmit = (e) => {
+      e.preventDefault();
+      // Validasi dan simpan data gaji
+      onNext();
+   };
+
    return (
       <div className="mt-4 mx-4 flex flex-col justify-center items-center">
          <div className="w-full flex flex-col mt-4 gap-5 lg:w-3/4">
@@ -8,7 +16,7 @@ const PayrollComponent = () => {
                <p className="font-light text-base text-slate-400">Fill all employee salary information data</p>
             </div>
             {/* Form data */}
-            <form action="" className="flex flex-col gap-8 mt-2">
+            <form action="" onSubmit={handleSubmit} className="flex flex-col gap-8 mt-2">
                {/* Basic salary */}
                <div className="flex flex-col gap-4 lg:w-1/2">
                   <span className="after:content-['*'] after:ml-1 after:text-pink-500 font-semibold">
@@ -77,8 +85,8 @@ const PayrollComponent = () => {
 
                {/* button cancel/next */}
                <div className="flex gap-6 justify-end items-center mt-4">
-                  <button>Cancel</button>
-                  <button className="bg-slate-200 py-3 px-8 rounded-md">Next</button>
+                  <button type="button" onClick={onPrevious}>Cancel</button>
+                  <button type="submit" className="bg-slate-200 py-3 px-8 rounded-md">Next</button>
                </div>
             </form>
          </div>
@@ -86,4 +94,9 @@ const PayrollComponent = () => {
    )
 }
 
-export default PayrollComponent
+export default PayrollComponent;
+
+PayrollComponent.propTypes = {
+   onNext: PropTypes.func,
+   onPrevious: PropTypes.func
+}

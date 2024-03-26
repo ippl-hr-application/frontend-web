@@ -1,5 +1,6 @@
+import PropTypes from "prop-types"
 
-const InviteEmployeeComponent = () => {
+const InviteEmployeeComponent = ({ onPrevious }) => {
    return (
       <div className="mt-4 mx-4 flex flex-col justify-center items-center">
          <div className="w-full flex flex-col mt-4 gap-5 lg:w-3/4">
@@ -15,12 +16,15 @@ const InviteEmployeeComponent = () => {
 
             {/* button cancel/next */}
             <div className="flex gap-6 justify-end items-center mt-36">
-               <button>Cancel</button>
-               <button className="bg-slate-200 py-3 px-8 rounded-md">Next</button>
+               <button onClick={onPrevious}>Cancel</button>
             </div>
          </div>
       </div>
    )
 }
 
-export default InviteEmployeeComponent
+export default InviteEmployeeComponent;
+
+InviteEmployeeComponent.propTypes = {
+   onPrevious: PropTypes.func
+}

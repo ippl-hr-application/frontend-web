@@ -1,6 +1,13 @@
 import { Datepicker } from "flowbite-react";
+import PropTypes from "prop-types"
 
-const EmploymentDataComponent = () => {
+const EmploymentDataComponent = ({ onPrevious, onNext }) => {
+   const handleSubmit = (e) => {
+      e.preventDefault();
+      // Validasi dan simpan data pekerjaan
+      onNext();
+   };
+
    return (
       <div className="mt-4 mx-4 flex flex-col justify-center items-center">
          <div className="w-full lg:flex flex-col mt-4 gap-5 lg:w-3/4">
@@ -10,7 +17,7 @@ const EmploymentDataComponent = () => {
                <p className="font-light text-base text-slate-400">Fill all employee data information related to company</p>
             </div>
             {/* form data */}
-            <form action="" className="flex flex-col gap-4">
+            <form action="" onSubmit={handleSubmit} className="flex flex-col gap-4">
                {/* Employee ID */}
                <label htmlFor="Employee ID" className="flex flex-col gap-2 w-full lg:w-1/2">
                   <span className="after:content-['*'] after:ml-1 after:text-pink-500 font-semibold">
@@ -76,8 +83,8 @@ const EmploymentDataComponent = () => {
 
                {/* button cancel/next */}
                <div className="flex gap-6 justify-end items-center mt-4">
-                  <button>Cancel</button>
-                  <button className="bg-slate-200 py-3 px-8 rounded-md">Next</button>
+                  <button type="button" onClick={onPrevious}>Cancel</button>
+                  <button type="submit" className="bg-slate-200 py-3 px-8 rounded-md">Next</button>
                </div>
             </form>
          </div>
@@ -85,4 +92,9 @@ const EmploymentDataComponent = () => {
    )
 }
 
-export default EmploymentDataComponent
+export default EmploymentDataComponent;
+
+EmploymentDataComponent.propTypes = {
+   onNext: PropTypes.func,
+   onPrevious: PropTypes.func
+}
