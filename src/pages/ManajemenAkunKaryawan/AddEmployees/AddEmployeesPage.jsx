@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import PersonalDataComponent from "../../../components/ManajemenAkunKaryawan/PersonalDataComponent";
 import EmploymentDataComponent from "../../../components/ManajemenAkunKaryawan/EmploymentDataComponent";
 import PayrollComponent from "../../../components/ManajemenAkunKaryawan/PayrollComponent";
-
+import InviteEmployeeComponent from "../../../components/ManajemenAkunKaryawan/InviteEmployeeComponent";
 
 // import { useNavigate } from "react-router-dom";
 
@@ -72,7 +72,12 @@ const AddEmployeesPage = () => {
             </div>
 
             {/* Card from Payroll */}
-            <PayrollComponent />
+            <div className="hidden">
+               <PayrollComponent />
+            </div>
+
+            {/* finish */}
+            <InviteEmployeeComponent />
          </div>
          {/* {!complete && (
             <button
