@@ -84,7 +84,7 @@ const LoginPage = () => {
                   to={'/register'}
                   className="border-none bg-primary text-white py-2 px-4 rounded-2xl font-semibold text-base lg:text-lg lg:py-3 lg:px-10 lg:rounded-3xl lg:hover:bg-blue-900 duration-300"
                >
-                  <button>Sing Up</button>
+                  <button>Sign Up</button>
                </Link>
             </nav>
             <div className="w-full">
