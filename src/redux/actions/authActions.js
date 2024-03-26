@@ -21,7 +21,7 @@ export const login = (email, password, navigate) => async (dispatch) => {
       // navigate("/");
       toast.success(respons?.data?.message);
       setTimeout(() => {
-         navigate("/");
+         navigate("/dashboard");
       }, 2000); // Ganti nilai 1000 dengan durasi yang diinginkan (dalam milidetik)
 
    } catch (error) {
