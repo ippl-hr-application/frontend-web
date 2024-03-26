@@ -10,9 +10,9 @@ import UbahSandi from "./pages/UbahSandi";
 import NotFoundPage from "./pages/NotFoundPage";
 import Task from "./pages/Task";
 
-import Employees from "./pages/ManajemenAkunKaryawan/Employees"
-import AddEmployees from "./pages/ManajemenAkunKaryawan/AddEmployees"
-import DetailEmployee from "./pages/ManajemenAkunKaryawan/DetailEmployee"
+import Employees from "./pages/ManajemenAkunKaryawan/EmployeesPage"
+import AddEmployees from "./pages/ManajemenAkunKaryawan/AddEmployees/AddEmployeesPage"
+import DetailEmployee from "./pages/ManajemenAkunKaryawan/DetailEmployees/DetailEmployeePage"
 
 import NoAccessToken from "./security/NoAccessToken"
 import Protected from "./security/Protected"

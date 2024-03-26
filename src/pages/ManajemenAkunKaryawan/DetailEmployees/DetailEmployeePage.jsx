@@ -1,5 +1,5 @@
-import Navbar from "../../components/Navbar"
-import CopyRight2 from "../../components/CopyRight2"
+import Navbar from "../../../components/Navbar"
+import CopyRight2 from "../../../components/CopyRight2"
 
 const DetailEmployee = () => {
    return (
