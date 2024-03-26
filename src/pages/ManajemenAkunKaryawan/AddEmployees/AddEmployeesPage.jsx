@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 
 import PersonalDataComponent from "../../../components/ManajemenAkunKaryawan/PersonalDataComponent";
 import EmploymentDataComponent from "../../../components/ManajemenAkunKaryawan/EmploymentDataComponent";
+import PayrollComponent from "../../../components/ManajemenAkunKaryawan/PayrollComponent";
+
 
 // import { useNavigate } from "react-router-dom";
 
@@ -65,7 +67,12 @@ const AddEmployeesPage = () => {
             </div>
 
             {/* Card from Employment Data */}
-            <EmploymentDataComponent />
+            <div className="hidden">
+               <EmploymentDataComponent />
+            </div>
+
+            {/* Card from Payroll */}
+            <PayrollComponent />
          </div>
          {/* {!complete && (
             <button
