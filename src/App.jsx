@@ -1,22 +1,21 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import LoginPage from "./pages/LoginPage"
-import HomePage from "./pages/HomePage"
-import FiturPage from "./pages/FiturPage"
-import TentangPage from "./pages/TentangPage"
-import HargaPage from "./pages/HargaPage"
-import LupaPassword from "./pages/LupaPassword"
-import RegisterPage from "./pages/RegisterPage"
-import UbahSandi from "./pages/UbahSandi"
-import NotFoundPage from "./pages/NotFoundPage"
-import ManajemenPemberitahuan from "./pages/ManajemenPemberitahuan"
-import ManajemenJadwal from "./pages/ManajemenJadwal"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import HomePage from "./pages/HomePage";
+import FiturPage from "./pages/FiturPage";
+import TentangPage from "./pages/TentangPage";
+import HargaPage from "./pages/HargaPage";
+import LupaPassword from "./pages/LupaPassword";
+import RegisterPage from "./pages/RegisterPage";
+import UbahSandi from "./pages/UbahSandi";
+import NotFoundPage from "./pages/NotFoundPage";
+import ManajemenPemberitahuan from "./pages/ManajemenPemberitahuan";
+import ManajemenJadwal from "./pages/ManajemenJadwal";
 
-import NoAccessToken from "./security/NoAccessToken"
+import NoAccessToken from "./security/NoAccessToken";
 // import Protected from "./security/Protected"
-import Dashboard from "./pages/Dashboard"
+import Dashboard from "./pages/Dashboard";
 
 function App() {
-
   return (
     <>
       <Router>
@@ -67,12 +66,18 @@ function App() {
 
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/manajemenpemberitahuan" element={<ManajemenPemberitahuan />} />
-          <Route path="/manajemenjadwal" element={<ManajemenJadwal />} />
+          <Route
+            path="/manajemenpemberitahuan"
+            element={<ManajemenPemberitahuan />}
+          />
+          <Route
+            path="/manajemenabsensi"
+            element={<ManajemenAbsensi />}
+          />
         </Routes>
       </Router>
     </>
   );
 }
 
-export default App
+export default App;

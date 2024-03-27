@@ -2,7 +2,14 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import { Datepicker } from "flowbite-react";
 import { Card } from "flowbite-react";
-import {Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow,} from "flowbite-react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeadCell,
+  TableRow,
+} from "flowbite-react";
 import { FaAngleRight } from "react-icons/fa";
 import { Dropdown } from "flowbite-react";
 import GambarSearch from "../assets/GambarSearch.png";
