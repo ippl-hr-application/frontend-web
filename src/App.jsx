@@ -21,6 +21,7 @@ import DetailEmployee from "./pages/ManajemenAkunKaryawan/DetailEmployees/Detail
 import NoAccessToken from "./security/NoAccessToken"
 import Protected from "./security/Protected"
 import Dashboard from "./pages/Dashboard"
+import ManajemenShift from "./pages/ManajemenShift"
 
 
 function App() {
@@ -28,12 +29,7 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <HomePage />
-            }
-          />
+          <Route path="/" element={<HomePage />} />
           <Route
             path="/login"
             element={
@@ -114,7 +110,14 @@ function App() {
               </Protected>
             }
           />
-          
+          <Route
+            path="/manajemenshift"
+            element={
+              <Protected>
+                <ManajemenShift />
+              </Protected>
+            }
+          />
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
