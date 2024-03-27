@@ -4,13 +4,13 @@ import CopyRight2 from "../../../components/CopyRight2";
 import "../../ManajemenAkunKaryawan/stepper.css";
 import { useState } from "react";
 import { FaCheck } from "react-icons/fa6";
-import { IoMdArrowRoundBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 
-import PersonalDataComponent from "../../../components/ManajemenAkunKaryawan/PersonalDataComponent";
-import EmploymentDataComponent from "../../../components/ManajemenAkunKaryawan/EmploymentDataComponent";
-import PayrollComponent from "../../../components/ManajemenAkunKaryawan/PayrollComponent";
-import InviteEmployeeComponent from "../../../components/ManajemenAkunKaryawan/InviteEmployeeComponent";
+import PersonalDataComponent from "../../../components/ManajemenAkunKaryawan/AddEmployees/PersonalDataComponent";
+import EmploymentDataComponent from "../../../components/ManajemenAkunKaryawan/AddEmployees/EmploymentDataComponent";
+import PayrollComponent from "../../../components/ManajemenAkunKaryawan/AddEmployees/PayrollComponent";
+import InviteEmployeeComponent from "../../../components/ManajemenAkunKaryawan/AddEmployees/InviteEmployeeComponent";
+import { MdKeyboardBackspace } from "react-icons/md";
 
 const AddEmployeesPage = () => {
    const steps = ["Personal Data", "Employment Data", "Payroll", "Invite Employee"];
@@ -42,12 +42,12 @@ const AddEmployeesPage = () => {
                <h2 className="text-blue-800 font-semibold text-4xl">Add Employees</h2>
             </div>
             {/* button back */}
-            <Link as={Link} to={"/employees"} className="flex items-center gap-2 mx-4 mb-4 mt-4 lg:mt-4">
-               <IoMdArrowRoundBack />
-               <p>Back</p>
+            <Link as={Link} to={"/employees"} className="mt-4 flex items-center gap-4 ml-6 hover:underline hover:scale-105 duration-300 w-1/12" >
+               <MdKeyboardBackspace className="w-6 h-6" />
+               <p className="text-base font-medium">Back</p>
             </Link>
             {/* step progress bar */}
-            <div className="flex gap-4 justify-center mt-14">
+            <div className="flex gap-4 justify-center mt-8">
                {steps.map((label, index) => (
                   <div
                      key={index}
