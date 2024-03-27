@@ -23,6 +23,7 @@ import Protected from "./security/Protected"
 import Dashboard from "./pages/Dashboard"
 import ManajemenShift from "./pages/ManajemenShift"
 import ManajemenPemberitahuan from "./pages/ManajemenPemberitahuan"
+import ManajemenAbsensi from "./pages/ManajemenAbsensi"
 
 
 function App() {
@@ -124,6 +125,14 @@ function App() {
             element={
               <Protected>
                 <ManajemenPemberitahuan />
+              </Protected>
+            }
+          />
+          <Route
+            path="/manajemenabsensi"
+            element={
+              <Protected>
+                <ManajemenAbsensi />
               </Protected>
             }
           />
