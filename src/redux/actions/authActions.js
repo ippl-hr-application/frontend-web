@@ -21,12 +21,13 @@ export const login = (email, password, navigate) => async (dispatch) => {
       // navigate("/");
       toast.success(respons?.data?.message);
       setTimeout(() => {
-         navigate("/dashboard");
+         navigate("/");
       }, 2000); // Ganti nilai 1000 dengan durasi yang diinginkan (dalam milidetik)
 
    } catch (error) {
       if (axios.isAxiosError(error)) {
          toast.error(error?.response?.data?.message);
+         console.log(error?.response?.data?.message);
          return;
       }
       else {

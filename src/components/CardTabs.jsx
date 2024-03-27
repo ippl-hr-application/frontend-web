@@ -1,8 +1,22 @@
-import React from "react";
 import { Tabs } from "flowbite-react";
 import { Dropdown } from "flowbite-react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CardTabs() {
+  const [activeTab, setActiveTab] = useState(0);
+  const navigate = useNavigate();
+
+  useEffect(() =>{
+    const handleNavigate = () => {
+      if (activeTab === 1) {
+        navigate("/task");
+      }
+    };
+
+    handleNavigate()
+  })
+
   return (
     <>
       <div className="stats border w-[920px] h-[260px]">
@@ -10,7 +24,7 @@ function CardTabs() {
           aria-label="Tabs with underline"
           style="underline"
           className="sticky top-0 bg-white focus:ring-0"
-        >
+          onActiveTabChange={(tab) => setActiveTab(tab)}>
           <Tabs.Item active title="Announcement" className="focus:ring-0">
             <div className="flex gap-5">
               <div className="border flex rounded-lg ml-3 justify-center w-[300px]">
@@ -29,8 +43,7 @@ function CardTabs() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 16 16"
                   fill="currentColor"
-                  className="w-4 h-4 opacity-70"
-                >
+                  className="w-4 h-4 opacity-70">
                   <path
                     fillRule="evenodd"
                     d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
@@ -51,7 +64,7 @@ function CardTabs() {
               </h2>
             </div>
           </Tabs.Item>
-          <Tabs.Item title="Kontak & Probation"></Tabs.Item>
+          {/* <Tabs.Item title="Kontak & Probation"></Tabs.Item> */}
           <Tabs.Item title="Task"></Tabs.Item>
         </Tabs>
       </div>

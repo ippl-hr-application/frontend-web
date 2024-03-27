@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "../components/Navbar";
 import CardProfile from "../components/CardProfile";
 import CardStatistik from "../components/CardStatistik";
@@ -7,27 +6,25 @@ import CardQuickLink from "../components/CardQuickLink";
 import CardTabs from "../components/CardTabs";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { getMe } from "../redux/actions/authActions";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { user, token } = useSelector((state) => state.auth);
+  const { token } = useSelector((state) => state.auth);
   useEffect(() => {
     if (token) {
       dispatch(getMe(navigate, null, "/login"));
     }
-  })
-
-  // console.log(user)
+  }, [dispatch, navigate, token]);
 
   return (
     <div>
       <Navbar />
       <div className="pt-[73px] container mx-auto">
-        <CardProfile user={user}/>
+        <CardProfile />
         <div className="flex">
           <CardStatistik />
           <div>

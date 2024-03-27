@@ -8,7 +8,7 @@ import LupaPassword from "./pages/LupaPassword";
 import RegisterPage from "./pages/RegisterPage";
 import UbahSandi from "./pages/UbahSandi";
 import NotFoundPage from "./pages/NotFoundPage";
-import Task from "./pages/Task";
+import TaskPage from "./pages/TaskPage";
 
 import Employees from "./pages/ManajemenAkunKaryawan/Employees"
 import AddEmployees from "./pages/ManajemenAkunKaryawan/AddEmployees"
@@ -77,7 +77,7 @@ function App() {
             path="/task"
             element={
               <Protected>
-                <Task />
+                <TaskPage />
               </Protected>
             }
           />

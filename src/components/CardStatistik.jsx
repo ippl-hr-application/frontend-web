@@ -1,6 +1,36 @@
-import React from "react";
+import { useSelector } from "react-redux";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 function CardStatistik() {
+  const [lenEmployeeStatus, setLenEmployeeStatus] = useState(0);
+  const [lenJobPosition, setLenJobPosition] = useState(0);
+  const { user } = useSelector((state) => state.auth);
+  const api_url = import.meta.env.VITE_REACT_API_URL;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const responseEmployeStatus = await axios.get(
+          `${api_url}/employment-status/${user?.user?.company?.company_id}`
+        );
+        const responseJobPosition = await axios.get(
+          `${api_url}/job-position/${user?.user?.company?.company_id}`
+        );
+        const employmentStatusLength =
+          responseEmployeStatus?.data?.data?.employmentStatus?.length;
+        const jobPositionLength =
+          responseJobPosition?.data?.data?.jobPosition?.length;
+        setLenEmployeeStatus(employmentStatusLength);
+        setLenJobPosition(jobPositionLength);
+      } catch (error) {
+        console.error("Error saat mengambil data:", error);
+      }
+    };
+
+    fetchData();
+  });
+
   return (
     <>
       <div className="mr-[40px]">
@@ -10,7 +40,7 @@ function CardStatistik() {
               <div className="stat-title font-semibold text-black mb-3">
                 Available Position
               </div>
-              <div className="stat-value mb-3">24</div>
+              <div className="stat-value mb-3">{lenJobPosition}</div>
               <div className="stat-desc text-red-500">4 urgently needed</div>
             </div>
           </div>
@@ -26,7 +56,7 @@ function CardStatistik() {
           <div className="stats w-[200px] h-[150px]">
             <div className="stat bg-pink-100">
               <div className="stat-title font-semibold text-black mb-3">
-                Who's Off
+                Who&apos;s Off
               </div>
               <div className="stat-value mb-3">0</div>
               <div className="stat-desc text-pink-500">
@@ -41,7 +71,7 @@ function CardStatistik() {
               <div className="stat-title font-semibold text-black">
                 Employment Status
               </div>
-              <div className="stat-value">216</div>
+              <div className="stat-value">{lenEmployeeStatus}</div>
               <div className="stat-desc">
                 <p className="mb-2">120 Men</p>
                 <p>96 Women</p>
