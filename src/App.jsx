@@ -8,6 +8,14 @@ import LupaPassword from "./pages/LupaPassword";
 import RegisterPage from "./pages/RegisterPage";
 import UbahSandi from "./pages/UbahSandi";
 import NotFoundPage from "./pages/NotFoundPage";
+<<<<<<< HEAD
+import ManajemenPemberitahuan from "./pages/ManajemenPemberitahuan";
+import ManajemenJadwal from "./pages/ManajemenJadwal";
+
+import NoAccessToken from "./security/NoAccessToken";
+// import Protected from "./security/Protected"
+import Dashboard from "./pages/Dashboard";
+=======
 import Task from "./pages/Task";
 
 import Employees from "./pages/ManajemenAkunKaryawan/EmployeesPage"
@@ -17,6 +25,7 @@ import DetailEmployee from "./pages/ManajemenAkunKaryawan/DetailEmployees/Detail
 import NoAccessToken from "./security/NoAccessToken"
 import Protected from "./security/Protected"
 import Dashboard from "./pages/Dashboard"
+>>>>>>> 7b76220da5fe7942623bb3869903c4c0c23dcc60
 
 function App() {
   return (
@@ -65,6 +74,17 @@ function App() {
           <Route path="/tentang" element={<TentangPage />} />
           <Route path="/harga" element={<HargaPage />} />
 
+          <Route path="*" element={<NotFoundPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route
+            path="/manajemenpemberitahuan"
+            element={<ManajemenPemberitahuan />}
+          />
+          <Route
+            path="/manajemenabsensi"
+            element={<ManajemenAbsensi />}
+          />
+
           <Route
             path="/dashboard"
             element={
@@ -103,6 +123,14 @@ function App() {
             element={
               <Protected>
                 <DetailEmployee />
+              </Protected>
+            }
+          />
+          <Route
+            path="/manajemenabsensi"
+            element={
+              <Protected>
+                <ManajemenAbsensi />
               </Protected>
             }
           />
