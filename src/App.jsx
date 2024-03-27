@@ -19,6 +19,8 @@ import DetailEmployee from "./pages/ManajemenAkunKaryawan/DetailEmployees/Detail
 // import NoAccessToken from "./security/NoAccessToken" // Satu definisi sudah ada di atas
 import Protected from "./security/Protected";
 import ManajemenShift from "./pages/ManajemenShift";
+import ManajemenPemberitahuan from "./pages/ManajemenPemberitahuan";
+import ManajemenAbsensi from "./pages/ManajemenAbsensi";
 
 
 function App() {
@@ -112,6 +114,22 @@ function App() {
             element={
               <Protected>
                 <ManajemenShift />
+              </Protected>
+            }
+          />
+          <Route
+            path="/manajemenpemberitahuan"
+            element={
+              <Protected>
+                <ManajemenPemberitahuan />
+              </Protected>
+            }
+          />
+          <Route
+            path="/manajemenabsensi"
+            element={
+              <Protected>
+                <ManajemenAbsensi />
               </Protected>
             }
           />
