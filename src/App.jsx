@@ -20,6 +20,7 @@ import DetailEmployee from "./pages/ManajemenAkunKaryawan/DetailEmployees/Detail
 import Protected from "./security/Protected";
 import ManajemenShift from "./pages/ManajemenShift";
 import ManajemenPemberitahuan from "./pages/ManajemenPemberitahuan";
+import ManajemenAbsensi from "./pages/ManajemenAbsensi";
 
 function App() {
   return (
@@ -120,6 +121,14 @@ function App() {
             element={
               <Protected>
                 <ManajemenPemberitahuan />
+              </Protected>
+            }
+          />
+          <Route
+            path="/manajemenabsensi"
+            element={
+              <Protected>
+                <ManajemenAbsensi />
               </Protected>
             }
           />
