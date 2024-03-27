@@ -22,6 +22,7 @@ import NoAccessToken from "./security/NoAccessToken"
 import Protected from "./security/Protected"
 import Dashboard from "./pages/Dashboard"
 import ManajemenShift from "./pages/ManajemenShift"
+import ManajemenPemberitahuan from "./pages/ManajemenPemberitahuan"
 
 
 function App() {
@@ -115,6 +116,14 @@ function App() {
             element={
               <Protected>
                 <ManajemenShift />
+              </Protected>
+            }
+          />
+          <Route
+            path="/manajemenpemberitahuan"
+            element={
+              <Protected>
+                <ManajemenPemberitahuan />
               </Protected>
             }
           />
