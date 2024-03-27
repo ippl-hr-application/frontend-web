@@ -55,7 +55,7 @@ function TaskPage() {
 
     fetchData();
     fetchEmployees();
-  });
+  }, [openModal]);
 
   // console.log(employees);
 
