@@ -8,20 +8,17 @@ import LupaPassword from "./pages/LupaPassword";
 import RegisterPage from "./pages/RegisterPage";
 import UbahSandi from "./pages/UbahSandi";
 import NotFoundPage from "./pages/NotFoundPage";
-
-import NoAccessToken from "./security/NoAccessToken";
+import NoAccessToken from "./security/NoAccessToken"; // Hanya diperlukan satu definisi ini
 // import Protected from "./security/Protected"
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/Dashboard"; // Hanya diperlukan satu definisi ini
 
 import Task from "./pages/Task";
-
-import Employees from "./pages/ManajemenAkunKaryawan/EmployeesPage"
-import AddEmployees from "./pages/ManajemenAkunKaryawan/AddEmployees/AddEmployeesPage"
-import DetailEmployee from "./pages/ManajemenAkunKaryawan/DetailEmployees/DetailEmployeePage"
-import NoAccessToken from "./security/NoAccessToken"
-import Protected from "./security/Protected"
-import Dashboard from "./pages/Dashboard"
-import ManajemenShift from "./pages/ManajemenShift"
+import Employees from "./pages/ManajemenAkunKaryawan/EmployeesPage";
+import AddEmployees from "./pages/ManajemenAkunKaryawan/AddEmployees/AddEmployeesPage";
+import DetailEmployee from "./pages/ManajemenAkunKaryawan/DetailEmployees/DetailEmployeePage";
+// import NoAccessToken from "./security/NoAccessToken" // Satu definisi sudah ada di atas
+import Protected from "./security/Protected";
+import ManajemenShift from "./pages/ManajemenShift";
 
 
 function App() {

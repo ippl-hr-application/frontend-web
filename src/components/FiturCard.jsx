@@ -18,9 +18,3 @@ const FiturCard = ({ imageSrc, title, text }) => {
 };
 
 export default FiturCard;
-
-FiturCard.propTypes = {
-  imageSrc: PropTypes.string,
-  title: PropTypes.string,
-  text: PropTypes.string,
-};

@@ -14,7 +14,7 @@ import { FaAngleRight } from "react-icons/fa";
 import { Dropdown } from "flowbite-react";
 import GambarSearch from "../assets/GambarSearch.png";
 
-export default function ManajemenJadwal() {
+export default function ManajemenAbsensi() {
   return (
     <>
       <Navbar />
